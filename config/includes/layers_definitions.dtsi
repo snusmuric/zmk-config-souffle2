@@ -1,0 +1,17 @@
+// Define layer numbers
+#define BASE 0
+#define NUM_WORD 1
+#define NUM 2
+#define NUM_LOCKED 3
+#define SYM_WORD 4
+#define SYM 5
+#define SYM_LOCKED 6
+#define NAV_WORD 7
+#define NAV 8
+#define NAV_LOCKED 9
+#define NAV_LEFTHAND 10
+#define NAV_LEFTHAND_LOCKED 11
+#define FUNCT 12
+#define FUNCT_LOCKED 13
+#define ADJUST 14
+#define ADJUST_LOCKED 15

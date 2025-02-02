@@ -1,0 +1,6 @@
+[submodule "zmk-helpers"]
+	path = zmk-helpers
+	url = git@github.com:urob/zmk-helpers.git
+[submodule "zmk-userspace"]
+	path = zmk-userspace
+	url = git@github.com:elpekenin/zmk-userspace.git
