@@ -118,8 +118,12 @@ jobs:
             cp build/zephyr/zmk.${{ inputs.fallback_binary }} "build/artifacts/${{ env.artifact_name }}.${{ inputs.fallback_binary }}"
           fi
 
-      - name: Archive (${{ env.display_name }})
+      - name: Zip artifacts
+        run: |
+          zip -j build/artifacts/artifacts.zip build/artifacts/*
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.archive_name }}
-          path: build/artifacts
+          name: my-artifact
+          path: build/artifacts/artifacts.zip
