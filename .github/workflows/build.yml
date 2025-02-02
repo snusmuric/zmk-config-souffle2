@@ -34,9 +34,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install zip
-        run: sudo apt-get install -y zip
-
       - name: Install yaml2json
         run: python3 -m pip install remarshal
 
@@ -121,12 +118,8 @@ jobs:
             cp build/zephyr/zmk.${{ inputs.fallback_binary }} "build/artifacts/${{ env.artifact_name }}.${{ inputs.fallback_binary }}"
           fi
 
-      - name: Zip artifacts
-        run: |
-          zip -j build/artifacts/artifacts.zip build/artifacts/*
-
-      - name: Upload artifact
+      - name: Archive (${{ env.display_name }})
         uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
-          path: build/artifacts/artifacts.zip
+          name: ${{ inputs.archive_name }}-${{ env.artifact_name }}
+          path: build/artifacts
