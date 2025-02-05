@@ -13,7 +13,7 @@
 	// But holding enter without double tapping, will activate the layer.
 	quick-tap-ms = <160>;
 	
-	flavor = "balanced";
+	flavor = "tap-preferred";
 };
 
 
