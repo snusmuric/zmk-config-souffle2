@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &lt {
+    quick_tap_ms = <150>;
     tapping-term-ms = <TD_TAPPING_TERM>;
     quick-tap-ms = <150>;
     flavor = "tap-preferred";
