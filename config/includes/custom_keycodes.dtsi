@@ -6,7 +6,7 @@
 
 // HYPER and MEH
 #define MY_HYPER LS(LC(LG(LALT)))
-#define MY_MEH LC(LALT(LSHIFT))
+#define MY_MEH LS(LC(LALT))
 
 // Shortcuts
 #define MY_UNDO LG(Z)
