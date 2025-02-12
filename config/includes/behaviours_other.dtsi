@@ -398,9 +398,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&sk LEFT_SHIFT>, <&mo NAV>, <&caps_word>, <&kp CAPSLOCK>;
-
-            hold-trigger-key-positions = <0>;        // Enables hold-trigger for layer switch
-            hold-trigger-on-release;                 // Triggers hold behavior on key release
         };
     };
 };
