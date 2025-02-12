@@ -382,5 +382,25 @@
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
         };
+
+        /*
+        * Tap dancing nav/shift
+        *
+        * Usage: &td_nav_shift_l
+        * Hold: Nav
+        * Tap: Sticky Shift
+        * Double Tap: Caps Word
+        * Triple Tap: Caps Lock
+        */
+
+        td_nav_shift_l: td_nav_shift_l {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&sk LEFT_SHIFT>, <&mo NAV>, <&caps_word>, <&kp CAPSLOCK>;
+
+            hold-trigger-key-positions = <0>;        // Enables hold-trigger for layer switch
+            hold-trigger-on-release;                 // Triggers hold behavior on key release
+        };
     };
 };
