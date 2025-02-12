@@ -10,7 +10,7 @@
 #define NAV 8
 #define NAV_LOCKED 9
 #define NAV_LEFTHAND 10
-#define NAV_LEFTHAND_LOCKED 11
+#define NAV_LEFTHAND_SELECTION 11
 #define FUNCT 12
 #define FUNCT_LOCKED 13
 #define ADJUST 14

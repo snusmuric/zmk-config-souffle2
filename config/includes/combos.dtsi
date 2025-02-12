@@ -4,161 +4,161 @@
 #define COMBO_PRIOR_IDLE_SLOW 100
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_undo {
-            bindings = <&kp LG(Z)>;
-            key-positions = <37 25>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_redo {
-            bindings = <&kp MY_REDO>;
-            key-positions = <LT1 LM1>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_cut {
-            bindings = <&kp LG(X)>;
-            key-positions = <38 26>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_copy {
-            bindings = <&kp LG(C)>;
-            key-positions = <39 27>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_paste {
-            bindings = <&kp LG(V)>;
-            key-positions = <40 28>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_esc2 {
-            bindings = <&kp ESC>;
-            key-positions = <LT4 LM4>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_toggle_adjust_layer {
-            bindings = <&tog ADJUST>;
-            key-positions = <LH4 RH4>;
-            timeout-ms = <COMBO_TERM_SLOW>;
-        };
-
-        combo_toggle_funct_layer {
-            bindings = <&tog FUNCT>;
-            key-positions = <LH0 RH0>;
-            timeout-ms = <COMBO_TERM_SLOW>;
-        };
-
-        combo_toggle_funct_layer2 {
-            bindings = <&mo FUNCT>;
-            key-positions = <RH0 RH1>;
-            timeout-ms = <COMBO_TERM_SLOW>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_toggle_num_layer_left {
-            bindings = <&tog NUM>;
-            key-positions = <LB0 LH1>;
-            timeout-ms = <COMBO_TERM_FAST>;
-        };
-
-        combo_toggle_nav_layer_left {
-            bindings = <&tog NAV>;
-            key-positions = <LB1 LH2>;
-            timeout-ms = <COMBO_TERM_FAST>;
-        };
-
-        combo_tog_num_layer_right {
-            bindings = <&tog NUM>;
-            key-positions = <RB0 RH1>;
-            timeout-ms = <COMBO_TERM_FAST>;
-        };
-
-        combo_tog_nav_layer_right {
-            bindings = <&tog NAV>;
-            key-positions = <RB1 RH2>;
-            timeout-ms = <COMBO_TERM_FAST>;
-        };
-
-        // combo_toggle_num_layer {
-        // 	bindings = <&mo NUM>;
-        // 	key-positions = <RH1 RH2>;
-        // 	timeout-ms = <COMBO_TERM_SLOW>;
-        // };
-
-        combo_enter_left {
-            bindings = <&kp ENTER>;
-            key-positions = <LM2 LM1>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-        };
-
-        combo_backspace_left {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <LM3 LM2>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-        };
-
-        combo_enter_right {
-            bindings = <&kp ENTER>;
-            key-positions = <RM1 RM2>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-        };
-
-        combo_backspace_right {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <RM2 RM3>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-        };
-
-        /*combo_lang_switch {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <LM0 LB0>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };*/
-
-        combo_lang_switch_win {
-            bindings = <&kp LA(LSHIFT)>;
-            key-positions = <RM0 RB0>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_print_screen {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <LN4 LT4>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_monosnap_capture_area {
-            bindings = <&kp LA(LG(N5))>;
-            key-positions = <LN3 LT3>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-
-        combo_monosnap_capture_screen {
-            bindings = <&kp LA(LG(N6))>;
-            key-positions = <LN2 LT2>;
-            timeout-ms = <COMBO_TERM_FAST>;
-            require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-        };
-    };
+	combos {
+		compatible = "zmk,combos";
+		
+		combo_undo {
+			bindings = <&kp LG(Z)>;
+			key-positions = <37 25>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_redo {
+			bindings = <&kp MY_REDO>;
+			key-positions = <LT1 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_cut {
+			bindings = <&kp LG(X)>;
+			key-positions = <38 26>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_copy {
+			bindings = <&kp LG(C)>;
+			key-positions = <39 27>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_paste {
+			bindings = <&kp LG(V)>;
+			key-positions = <40 28>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_esc2 {
+			bindings = <&kp ESC>;
+			key-positions = <LT4 LM4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_toggle_adjust_layer {
+			bindings = <&tog ADJUST>;
+			key-positions = <LH4 RH4>;
+			timeout-ms = <COMBO_TERM_SLOW>;
+		};
+		
+		combo_toggle_funct_layer {
+			bindings = <&tog FUNCT>;
+			key-positions = <LH0 RH0>;
+			timeout-ms = <COMBO_TERM_SLOW>;
+		};
+		
+		combo_toggle_funct_layer2 {
+			bindings = <&mo FUNCT>;
+			key-positions = <RH0 RH1>;
+			timeout-ms = <COMBO_TERM_SLOW>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_toggle_num_layer_left {
+			bindings = <&tog NUM>;
+			key-positions = <LB0 LH1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+		
+		combo_toggle_nav_layer_left {
+			bindings = <&tog NAV_LEFTHAND_SELECTION>;
+			key-positions = <LB1 LH2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+		
+		combo_tog_num_layer_right {
+			bindings = <&tog NUM>;
+			key-positions = <RB0 RH1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+		
+		combo_tog_nav_layer_right {
+			bindings = <&tog NAV>;
+			key-positions = <RB1 RH2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+		
+		// combo_toggle_num_layer {
+		// 	bindings = <&mo NUM>;
+		// 	key-positions = <RH1 RH2>;
+		// 	timeout-ms = <COMBO_TERM_SLOW>;
+		// };
+		
+		combo_enter_left {
+			bindings = <&kp ENTER>;
+			key-positions = <LM2 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+		};
+		
+		combo_backspace_left {
+			bindings = <&kp BACKSPACE>;
+			key-positions = <LM3 LM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+		};
+		
+		combo_enter_right {
+			bindings = <&kp ENTER>;
+			key-positions = <RM1 RM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+		};
+		
+		combo_backspace_right {
+			bindings = <&kp BACKSPACE>;
+			key-positions = <RM2 RM3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+		};
+		
+		/*combo_lang_switch {
+			bindings = <&kp LG(SPACE)>;
+			key-positions = <LM0 LB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};*/
+		
+		combo_lang_switch_win {
+			bindings = <&kp LA(LSHIFT)>;
+			key-positions = <RM0 RB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_print_screen {
+			bindings = <&kp PRINTSCREEN>;
+			key-positions = <LN4 LT4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_monosnap_capture_area {
+			bindings = <&kp LA(LG(N5))>;
+			key-positions = <LN3 LT3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+		
+		combo_monosnap_capture_screen {
+			bindings = <&kp LA(LG(N6))>;
+			key-positions = <LN2 LT2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+	};
 };

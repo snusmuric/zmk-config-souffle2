@@ -2,18 +2,18 @@
 #include "elpekenin/behaviors.dtsi"
 
 
-/ {
-	layer_callbacks {
-		compatible = "elpekenin,layer-callback";
-		layer_on {
-			layer = <SYM>;
-			event = "on-activation";
-			bindings = <&kp F17>;
-		};
-		layer_off {
-			layer = <SYM>;
-			event = "on-deactivation";
-			bindings = <&kp F18>;
-		};
-	};
-};
+// / {
+// 	layer_callbacks {
+// 		compatible = "elpekenin,layer-callback";
+// 		layer_on {
+// 			layer = <SYM>;
+// 			event = "on-activation";
+// 			bindings = <&kp F17>;
+// 		};
+// 		layer_off {
+// 			layer = <SYM>;
+// 			event = "on-deactivation";
+// 			bindings = <&kp F18>;
+// 		};
+// 	};
+// };
