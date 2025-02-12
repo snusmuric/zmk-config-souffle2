@@ -388,7 +388,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             bindings = <&mo>, <&sk>;
         };
 
@@ -399,12 +399,11 @@
         * Hold: Nav
         * Tap: Sticky Shift
         * Double Tap: Caps Word
-        * Triple Tap: Caps Lock
         */
         td_nav_shift_l: td_nav_shift_l {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&nav_shift NAV LSHFT>, <&caps_word>;
         };
     };
