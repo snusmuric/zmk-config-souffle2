@@ -397,7 +397,8 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <TD_TAPPING_TERM>;
-            bindings = <&sk LEFT_SHIFT>, <&mo NAV>, <&caps_word>, <&kp CAPSLOCK>;
+            bindings = <&mo NAV>, <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
+                        // ↑ Hold    // ↑ Tap         // ↑ Double    // ↑ Triple
         };
     };
 };
