@@ -383,6 +383,15 @@
             hold-trigger-on-release;
         };
 
+        nav_shift: nav_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&mo>, <&sk>;
+        };
+
         /*
         * Tap dancing nav/shift
         *
@@ -392,13 +401,11 @@
         * Double Tap: Caps Word
         * Triple Tap: Caps Lock
         */
-
         td_nav_shift_l: td_nav_shift_l {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <TD_TAPPING_TERM>;
-            bindings = <&mo NAV>, <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
-                        // ↑ Hold    // ↑ Tap         // ↑ Double    // ↑ Triple
+            tapping-term-ms = <200>;
+            bindings = <&nav_shift NAV LSHFT>, <&caps_word>;
         };
     };
 };
