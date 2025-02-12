@@ -79,7 +79,7 @@
 			&kp F1              &kp F2              &kp F3         &kp F4                &kp F5                &kp F6                                           &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                        &kp PIPE   &hm_shift_r RSHFT COLON  &hm_r RGUI LEFT_PARENTHESIS  &hm_r RALT RIGHT_PARENTHESIS  &hm_r RCTRL QUESTION  &trans
-			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT  &to NUM_LOCKED                  &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
+			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &to NUM_LOCKED                &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
 			&trans  &trans  &to BASE  &trans  &trans                                                                                                    &trans  &trans  &trans  &trans  &trans
 			>;
 			
@@ -93,7 +93,7 @@
 			&kp F1              &kp F2              &kp F3         &kp F4                &kp F5                &kp F6                                                   &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp PIPE   &hm_shift_r RSHFT COLON  &hm_r RGUI LEFT_PARENTHESIS  &hm_r RALT RIGHT_PARENTHESIS  &hm_r RCTRL QUESTION  &trans
-			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT &ht_tog_layer MY_HYPER NUM               &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
+			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
 			&trans  &trans  &to BASE  &trans  &trans                                                                                                            &trans  &trans  &trans  &trans  &trans
 			>;
 			
@@ -160,11 +160,11 @@
 		nav_righthand_word_layer {
 			display-name = "NavR Word";
 			bindings = <
-			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                          &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
-			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                        &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP          &trans
-			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                         &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &trans
-			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none    &to NAV_LOCKED                 &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &trans
-			&trans  &trans  &to BASE  &trans  &trans                                                                                                            &trans  &trans   &trans  &trans  &tog NAV
+			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                           &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
+			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                         &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP          &trans
+			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                          &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none    &to NAV_LOCKED                  &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &kp PAUSE_BREAK
+			&trans  &trans  &to BASE  &trans  &trans                                                                                                             &trans  &trans   &trans  &trans  &tog NAV
 			>;
 			
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -176,8 +176,8 @@
 			bindings = <
 			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                       &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
 			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                     &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP          &trans
-			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                      &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &trans
-			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none    &to NAV_LOCKED              &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &trans
+			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                      &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none    &to NAV_LOCKED              &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &kp PAUSE_BREAK
 			&trans  &trans  &to BASE  &trans  &trans                                                                                                         &trans  &trans   &trans  &trans  &tog NAV
 			>;
 			
@@ -187,12 +187,11 @@
 		nav_layer_righthand_locked {
 			display-name = "NavR";
 			bindings = <
-			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                       &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
-			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                     &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP          &trans
-			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                      &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &trans
-			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none    &to BASE                    &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &trans
-			&trans  &trans  &to BASE  &trans  &trans                                                                                                         &trans  &trans   &trans  &trans   &to BASE
-			>;
+			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                        &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
+			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                      &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP          &trans
+			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                       &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none      &to BASE                   &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &kp PAUSE_BREAK
+			&trans  &trans  &to BASE  &trans  &trans                                                                                                          &trans  &trans   &trans  &trans   &to BASE
 			
 			//sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
@@ -202,10 +201,10 @@
 			display-name = "NavL";
 			bindings = <
 			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
-			&kp LGUI              &kp PG_UP           &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L           &kp HOME                                         &kp HOME    &kp MY_LEFT_L            &none                &kp MY_RIGHT_L     &kp PG_UP          &trans
-			&trans                &kp PG_DN           &kp LEFT                 &kp DOWN             &kp RIGHT                &kp END                                          &kp END     &kp RSHFT                &kp RGUI             &kp RALT           &kp RCTRL          &kp SCROLLLOCK
-			&kp LALT              &kp MY_UNDO         &kp MY_LEFT_W            &kp MY_COPY          &kp MY_RIGHT_W           &kp INSERT &to NAV_LOCKED               &trans   &kp INSERT  &none                    &none                &none              &none             &kp PAUSE_BREAK
-			&trans  &trans  &to BASE  &trans  &trans                                                                                                                 &trans   &trans   &trans  &trans  &trans
+			&kp LGUI              &kp PG_UP           &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L           &kp HOME                                         &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP          &trans
+			&trans                &kp PG_DN           &kp LEFT                 &kp DOWN             &kp RIGHT                &kp END                                          &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO         &kp MY_LEFT_W            &kp MY_COPY          &kp MY_RIGHT_W           &kp INSERT  &to NAV_LOCKED               &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &kp PAUSE_BREAK
+			&trans  &trans  &to BASE  &trans  &trans                                                                                                                  &trans  &trans   &trans  &trans  &tog NAV
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
@@ -214,10 +213,10 @@
 		nav_layer_lefthand_selection {
 			display-name = "NavLS";
 			bindings = <
-			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
-			&kp LGUI              &kp PG_UP           &kp LS(MY_LEFT_L)        &kp LS(UP)           &kp LS(MY_RIGHT_L)       &kp LS(HOME)                                     &kp HOME    &kp MY_LEFT_L            &none                &kp MY_RIGHT_L     &kp PG_UP          &trans
-			&trans                &kp PG_DN           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp END     &kp RSHFT                &kp RGUI             &kp RALT           &kp RCTRL          &kp SCROLLLOCK
-			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT &to BASE                     &trans   &kp INSERT  &none                    &none                &none              &none             &kp PAUSE_BREAK
+			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1               &kp F12
+			&kp LGUI              &kp PG_UP           &kp LS(MY_LEFT_L)        &kp LS(UP)           &kp LS(MY_RIGHT_L)       &kp LS(HOME)                                     &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP            &trans
+			&trans                &kp PG_DN           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN    &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT    &to BASE                  &trans   &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL              &kp PAUSE_BREAK
 			&trans  &trans  &to BASE  &trans  &trans                                                                                                                 &trans  &trans   &trans  &trans  &to BASE
 			>;
 			
