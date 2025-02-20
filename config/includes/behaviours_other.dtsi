@@ -403,7 +403,7 @@
         td_nav_shift_l: td_nav_shift_l {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&nav_shift NAV LSHFT>, <&caps_word>;
         };
     };
