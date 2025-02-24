@@ -406,5 +406,12 @@
             tapping-term-ms = <250>;
             bindings = <&nav_shift NAV LSHFT>, <&caps_word>;
         };
+
+        td_hyper_capsword_l: td_hyper_capsword_l {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&sk LS(LC(LG(LALT)))>, <&caps_word>;
+        };
     };
 };
