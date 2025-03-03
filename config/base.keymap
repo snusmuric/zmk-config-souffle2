@@ -131,10 +131,10 @@
 		sym_layer {
 			display-name = "Sym";
 			bindings = <
-			&kp F1              &kp F2                   &kp F3                &kp F4            &kp F5                  &kp F6                                            &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
-			&trans              &kp SQT                  &kp LESS_THAN         &kp GREATER_THAN  &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
-			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS          &kp EQUAL               &kp HASH                                          &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &kp COMMA
-			&trans              &kp CARET                &kp SLASH             &kp ASTERISK      &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED                 &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
+			&kp F1              &kp F2                   &kp F3                &kp F4                  &kp F5                  &kp F6                                            &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
+			&trans              &kp SQT                  &kp LESS_THAN         &ht GRAVE GREATER_THAN  &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
+			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH                                          &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &kp COMMA
+			&trans              &kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED                 &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
 			&trans   &trans  &to BASE  &trans  &trans                                                                                                              &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
@@ -145,10 +145,10 @@
 		sym_layer_locked {
 			display-name = "Sym";
 			bindings = <
-			&kp F1              &kp F2                   &kp F3                &kp F4            &kp F5                  &kp F6                                          &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
-			&trans              &kp SQT                  &kp LESS_THAN         &kp GREATER_THAN  &kp DOUBLE_QUOTES       &kp DOT                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
-			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS          &kp EQUAL               &kp HASH                                        &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &kp COMMA
-			&trans              &kp CARET                &kp SLASH             &kp ASTERISK      &kp BACKSLASH           &kp GRAVE  &to BASE                     &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
+			&kp F1              &kp F2                   &kp F3                &kp F4                   &kp F5                  &kp F6                                          &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
+			&trans              &kp SQT                  &kp LESS_THAN         &ht GRAVE GREATER_THAN   &kp DOUBLE_QUOTES       &kp DOT                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
+			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                 &kp EQUAL               &kp HASH                                        &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &kp COMMA
+			&trans              &kp CARET                &kp SLASH             &kp ASTERISK             &kp BACKSLASH           &kp GRAVE  &to BASE                     &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
 			&trans  &to BASE &trans  &trans  &trans                                                                                                             &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
