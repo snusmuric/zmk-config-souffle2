@@ -27,7 +27,7 @@
 // #include <dt-bindings/zmk/mouse.h>
 // #endif
 
-#include <dt-bindings/zmk/pointing.h>ººº
+#include <dt-bindings/zmk/pointing.h>
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/currency.dtsi"
