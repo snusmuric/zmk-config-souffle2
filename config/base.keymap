@@ -27,6 +27,8 @@
 // #include <dt-bindings/zmk/mouse.h>
 // #endif
 
+#include <dt-bindings/zmk/pointing.h>ººº
+
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/currency.dtsi"
 
@@ -68,8 +70,8 @@
 			&kp F1                &kp F2           &kp F3           &kp F4           &kp F5                 &kp F6                                                                                      &kp F7          &kp F8                &kp F9         &kp F10        &kp F11           &kp F12
 			&sk LGUI              &kp Q            &kp W            &kp E            &kp R                  &kp T                                                                                       &kp Y           &kp U                 &kp I          &kp O          &kp P             &ht RGUI RBKT
 			&sk LCTRL             &hm_l LCTRL A    &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &ht RCTRL LBKT
-			&sk LEFT_ALT          &kp Z            &kp X            &kp C            &kp V                  &kp B   &ht_tog_layer MY_HYPER NUM                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RALT SQT
-			&td_hyper_capsword_l  &lt ADJUST ESC   &mo NAV_LEFTHAND_SELECTION  &ht LSHFT SPACE  &lt NAV TAB                                                                        &sl SYM  &ht RSHFT BSPC  &lt NUM DEL  &lt FUNCT ENTER  &td_meh_capsword_r
+			&sk LEFT_ALT          &kp Z            &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RALT SQT
+			&td_hyper_capsword_l  &lt ADJUST ESC   &mo NAV_LEFTHAND_SELECTION  &ht LSHFT SPACE  &lt NAV TAB                                                             &sl SYM  &ht RSHFT BSPC  &lt NUM DEL  &lt FUNCT ENTER  &td_meh_capsword_r
 			>;
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
@@ -221,6 +223,19 @@
 			&trans                &kp LG(A)           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp RS(END)     &hm_shift_r RSHFT RS(LEFT)   &hm_r RGUI RS(DOWN)  &hm_r RALT RS(RIGHT)   &hm_r RCTRL RS(PG_DN)    &kp SCROLLLOCK
 			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT    &to BASE                  &trans   &kp INSERT      &kp RS(MY_LEFT_W)            &none                &kp RS(MY_RIGHT_W)     &kp DEL                 &kp PAUSE_BREAK
 			&trans  &to BASE &trans  &trans  &trans                                                                                                                  &trans  &trans   &trans  &trans  &to BASE
+			>;
+			
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
+		};
+		
+		mouse {
+			isplay-name = "Mouse";
+			bindings = <
+			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7         &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
+			&kp LGUI              &kp PG_UP           &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L           &kp HOME                                         &kp SCRL_UP    &kp MY_LEFT_L            &kp MOVE_UP          &kp MY_RIGHT_L     &kp PG_UP          &trans
+			&trans                &kp PG_DN           &kp LEFT                 &kp DOWN             &kp RIGHT                &kp END                                          &kp SCRL_DOWN  &kp MOVE_LEFT            &kp MOVE_DOWN        &kp MOVE_RIGHT     &hm_r RCTRL PG_DN  &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO         &kp MY_LEFT_W            &kp MY_COPY          &kp MY_RIGHT_W           &kp INSERT  &to NAV_LOCKED               &trans  &kp INSERT     &kp SCRL_DOWN            &none                &kp SCRL_DOWN      &kp DEL            &kp PAUSE_BREAK
+			&trans  &to BASE &trans  &trans  &trans                                                                                                                   &kp LCLK  &kp RCLK   &kp MCLK  &trans  &tog NAV
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
