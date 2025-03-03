@@ -79,7 +79,7 @@
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                        &kp PIPE   &hm_shift_r RSHFT COLON  &hm_r RGUI LEFT_PARENTHESIS  &hm_r RALT RIGHT_PARENTHESIS  &hm_r RCTRL QUESTION  &trans
 			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &to NUM_LOCKED                &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
-			&trans  &to BASE &trans  &trans  &trans                                                                                                     &trans  &trans  &trans  &trans  &trans
+			&trans  &to BASE &trans  &trans   &kp N0                                                                                                    &trans  &trans  &trans  &trans  &trans
 			>;
 			
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -93,7 +93,7 @@
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp PIPE   &hm_shift_r RSHFT COLON  &hm_r RGUI LEFT_PARENTHESIS  &hm_r RALT RIGHT_PARENTHESIS  &hm_r RCTRL QUESTION  &trans
 			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
-			&trans  &to BASE &trans  &trans  &trans                                                                                                             &trans  &trans  &trans  &trans  &trans
+			&trans  &to BASE &trans  &trans  &kp N0                                                                                                             &trans  &trans  &trans  &trans  &trans
 			>;
 			
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -107,7 +107,7 @@
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                        &kp PIPE   &hm_shift_r RSHFT COLON  &hm_r RGUI LEFT_PARENTHESIS  &hm_r RALT RIGHT_PARENTHESIS  &hm_r RCTRL QUESTION  &trans
 			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT     &to BASE                     &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
-			&trans  &to BASE &trans  &trans  &trans                                                                                                     &trans  &trans  &trans  &trans  &to BASE
+			&trans  &to BASE &trans  &trans  &kp N0                                                                                                     &trans  &trans  &trans  &trans  &to BASE
 			>;
 			
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -121,7 +121,7 @@
 			&trans                &kp SQT                          &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                                         &kp AMPS   &kp SEMICOLON             &kp LEFT_BRACKET              &kp RIGHT_BRACKET               &kp PERCENT           &trans
 			&trans                &hm_l LCTRL EXCLAMATION          &hm_l LGUI MINUS      &hm_shift_l LSHFT PLUS  &kp EQUAL               &kp HASH                                        &kp PIPE   &hm_shift_r RSHFT COLON   &hm_r RGUI LEFT_PARENTHESIS   &hm_r RCTRL RIGHT_PARENTHESIS   &kp QUESTION          &kp COMMA
 			&trans                &kp CARET                        &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED               &trans  &kp TILDE  &kp DOLLAR                &kp LEFT_BRACE                &kp RIGHT_BRACE                 &kp AT_SIGN           &trans
-			&trans  &to BASE &trans  &trans  &trans                                                                                                                             &trans  &kp DEL  &trans  &trans  &trans
+			&trans  &to BASE &trans  &trans  &trans                                                                                                                              &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -135,7 +135,7 @@
 			&trans              &kp SQT                  &kp LESS_THAN         &ht GRAVE GREATER_THAN  &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH                                          &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &kp COMMA
 			&trans              &kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED                 &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
-			&trans   &trans  &to BASE  &trans  &trans                                                                                                              &trans  &kp DEL  &trans  &trans  &trans
+			&trans   &to BASE  &kp DOT  &trans  &kp COLON                                                                                                               &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -149,7 +149,7 @@
 			&trans              &kp SQT                  &kp LESS_THAN         &ht GRAVE GREATER_THAN   &kp DOUBLE_QUOTES       &kp DOT                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                 &kp EQUAL               &kp HASH                                        &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &kp COMMA
 			&trans              &kp CARET                &kp SLASH             &kp ASTERISK             &kp BACKSLASH           &kp GRAVE  &to BASE                     &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
-			&trans  &to BASE &trans  &trans  &trans                                                                                                             &trans  &kp DEL  &trans  &trans  &trans
+			&trans   &to BASE  &kp DOT  &trans  &kp COLON                                                                                                               &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -213,10 +213,10 @@
 		nav_layer_lefthand_selection {
 			display-name = "NavLS";
 			bindings = <
-			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1               &kp F12
-			&kp LGUI              &kp LG(W)           &kp LS(MY_LEFT_L)        &kp LS(UP)           &kp LS(MY_RIGHT_L)       &kp LS(HOME)                                     &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP            &trans
-			&trans                &kp LG(A)           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN    &kp SCROLLLOCK
-			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT    &to BASE                  &trans   &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL              &kp PAUSE_BREAK
+			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7          &kp F8                       &kp F9               &kp F10                &kp F1                   &kp F12
+			&kp LGUI              &kp LG(W)           &kp LS(MY_LEFT_L)        &kp LS(UP)           &kp LS(MY_RIGHT_L)       &kp LS(HOME)                                     &kp RS(HOME)    &kp RS(MY_LEFT_L)            &kp RS(UP)           &kp RS(MY_RIGHT_L)     &kp RS(PG_UP)            &trans
+			&trans                &kp LG(A)           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp RS()END     &hm_shift_r RSHFT RS(LEFT)   &hm_r RGUI RS(DOWN)  &hm_r RALT RS(RIGHT)   &hm_r RCTRL RS(PG_DN)    &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT    &to BASE                  &trans   &kp INSERT      &kp RS(MY_LEFT_W)            &none                &kp RS(MY_RIGHT_W)     &kp DEL              &kp PAUSE_BREAK
 			&trans  &to BASE &trans  &trans  &trans                                                                                                                  &trans  &trans   &trans  &trans  &to BASE
 			>;
 			
