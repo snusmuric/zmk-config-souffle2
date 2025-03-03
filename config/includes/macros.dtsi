@@ -15,7 +15,8 @@
 			;
 		};
 		
-		euro_mac: behavior_macro {
+		euro_mac: euro_mac {
+			#binding-cells = <0>;
 			bindings
 			= <&macro_press &kp LALT>
 			, <&macro_press &kp LSFT>
@@ -25,7 +26,8 @@
 			;
 		};
 		
-		pound_mac: behavior_macro {
+		euro_mac: euro_mac {
+			#binding-cells = <0>;
 			bindings
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp N3>
@@ -33,7 +35,8 @@
 			;
 		};
 		
-		yen_mac: behavior_macro {
+		euro_mac: euro_mac {
+			#binding-cells = <0>;
 			bindings
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp Y>
