@@ -1,8 +1,7 @@
 #include "layers_definitions.dtsi"
 
 / {
-	macros {
-		// this approach doesn't work.
+	macros {/// this approach doesn't work.k.
 		layer_switch_macro: layer_switch_macro {
 			compatible = "zmk,behavior-macro-one-param";
 			#binding-cells = <1>;
@@ -17,29 +16,29 @@
 		};
 		
 		euro_mac: behavior_macro {
-			bindings = <
-			&macro_press &kp LALT>,// Press Option (Left Alt)
-			<&macro_press &kp LSFT>,// Press Shift
-			<&macro_tap &kp N2>,// Tap the '2' key
-			<&macro_release &kp LSFT>,// Release Shift
-			<&macro_release &kp LALT>// Release Option
-			>;
+			bindings =
+			= <&macro_press &kp LALT>
+			, <&macro_press &kp LSFT>
+			, <&macro_tap &kp N2>
+			, <&macro_release &kp LSFT>
+			, <&macro_release &kp LALT>
+			;
 		};
 		
 		pound_mac: behavior_macro {
-			bindings = <
-			&macro_press &kp LALT>,// Press Option (Left Alt)
-			<&macro_tap &kp N3>,// Tap the '3' key
-			<&macro_release &kp LALT>// Release Option
-			>;
+			bindings
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp N3>
+			, <&macro_release &kp LALT>
+			;
 		};
 		
 		yen_mac: behavior_macro {
-			bindings = <
-			&macro_press &kp LALT>,// Press Option (Left Alt)
-			<&macro_tap &kp Y>,// Tap the 'Y' key
-			<&macro_release &kp LALT>// Release Option
-			>;
+			bindings
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp Y>
+			, <&macro_release &kp LALT>
+			;
 		};
 	};
 };
