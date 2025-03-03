@@ -27,7 +27,8 @@
 // #include <dt-bindings/zmk/mouse.h>
 // #endif
 
-#include <zmk-helpers/unicode-chars/currency.dtsi>
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/unicode-chars/currency.dtsi".
 
 // Personal includes
 #include "includes/custom_keycodes.dtsi"
