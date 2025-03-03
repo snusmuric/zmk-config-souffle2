@@ -145,6 +145,7 @@
 			key-positions = <LN4 LT4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <SYM, SYM_LOCKED>;
 		};
 		
 		combo_monosnap_capture_area {
@@ -152,6 +153,7 @@
 			key-positions = <LN3 LT3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <SYM, SYM_LOCKED>;
 		};
 		
 		combo_monosnap_capture_screen {
@@ -159,6 +161,7 @@
 			key-positions = <LN2 LT2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <SYM, SYM_LOCKED>;
 		};
 	};
 };
