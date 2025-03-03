@@ -150,7 +150,7 @@
 			bindings = <
 			&kp F1              &kp F2                   &kp F3                &kp F4                   &kp F5                  &kp F6                                          &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
 			&trans              &kp SQT                  &kp LESS_THAN         &ht GRAVE GREATER_THAN   &kp DOUBLE_QUOTES       &kp DOT                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &curr_euro
-			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                 &kp EQUAL               &kp HASH                                        &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &curr_poundA
+			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                 &kp EQUAL               &kp HASH                                        &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &curr_pound
 			&trans              &kp CARET                &kp SLASH             &kp ASTERISK             &kp BACKSLASH           &kp GRAVE  &to BASE                     &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &curr_yen
 			&trans   &to BASE  &kp DOT  &trans  &kp COLON                                                                                                               &trans  &kp DEL  &trans  &trans  &trans
 			>;
