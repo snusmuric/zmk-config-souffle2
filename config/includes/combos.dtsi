@@ -1,3 +1,5 @@
+#include "includes/layers_definitions.dtsi"
+
 #define COMBO_TERM_FAST 35
 #define COMBO_TERM_SLOW 50
 #define COMBO_PRIOR_IDLE_FAST 10
