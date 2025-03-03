@@ -218,8 +218,8 @@
 			bindings = <
 			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7          &kp F8                       &kp F9               &kp F10                &kp F1                   &kp F12
 			&kp LGUI              &kp LG(W)           &kp LS(MY_LEFT_L)        &kp LS(UP)           &kp LS(MY_RIGHT_L)       &kp LS(HOME)                                     &kp RS(HOME)    &kp RS(MY_LEFT_L)            &kp RS(UP)           &kp RS(MY_RIGHT_L)     &kp RS(PG_UP)            &trans
-			&trans                &kp LG(A)           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp RS()END     &hm_shift_r RSHFT RS(LEFT)   &hm_r RGUI RS(DOWN)  &hm_r RALT RS(RIGHT)   &hm_r RCTRL RS(PG_DN)    &kp SCROLLLOCK
-			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT    &to BASE                  &trans   &kp INSERT      &kp RS(MY_LEFT_W)            &none                &kp RS(MY_RIGHT_W)     &kp DEL              &kp PAUSE_BREAK
+			&trans                &kp LG(A)           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp RS(END)     &hm_shift_r RSHFT RS(LEFT)   &hm_r RGUI RS(DOWN)  &hm_r RALT RS(RIGHT)   &hm_r RCTRL RS(PG_DN)    &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT    &to BASE                  &trans   &kp INSERT      &kp RS(MY_LEFT_W)            &none                &kp RS(MY_RIGHT_W)     &kp DEL                 &kp PAUSE_BREAK
 			&trans  &to BASE &trans  &trans  &trans                                                                                                                  &trans  &trans   &trans  &trans  &to BASE
 			>;
 			
