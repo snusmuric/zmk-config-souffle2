@@ -16,6 +16,7 @@
 		};
 		
 		euro_mac: euro_mac {
+			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
 			= <&macro_press &kp LALT>
@@ -27,6 +28,7 @@
 		};
 		
 		euro_mac: euro_mac {
+			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
 			= <&macro_press &kp LALT>
@@ -36,6 +38,7 @@
 		};
 		
 		euro_mac: euro_mac {
+			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
 			= <&macro_press &kp LALT>
