@@ -27,7 +27,7 @@
 			;
 		};
 		
-		euro_mac: euro_mac {
+		pound_mac: pound_mac {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
@@ -37,7 +37,7 @@
 			;
 		};
 		
-		euro_mac: euro_mac {
+		yen_mac: yen_mac {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
