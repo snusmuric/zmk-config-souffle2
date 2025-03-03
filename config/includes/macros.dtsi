@@ -1,19 +1,45 @@
 #include "layers_definitions.dtsi"
 
 / {
-macros {
-        // this approach doesn't work.
-        layer_switch_macro: layer_switch_macro {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            wait-ms = <30>;  // Add a small delay to ensure proper layer switching
-            tap-ms = <30>;   // Add a small delay between taps
-            bindings
-                = <&macro_tap &to BASE>          // First force switch to base layer
-                , <&macro_wait_time 30>          // Wait a moment for the layer switch to complete
-                , <&macro_param_1to1>            // Load parameter
-                , <&macro_tap &tog MACRO_PLACEHOLDER> // Toggle to lock the target layer
-                ;
-        };
-    };
+	macros {
+		// this approach doesn't work.
+		layer_switch_macro: layer_switch_macro {
+			compatible = "zmk,behavior-macro-one-param";
+			#binding-cells = <1>;
+			wait-ms = <30>;// Add a small delay to ensure proper layer switching
+			tap-ms = <30>;// Add a small delay between taps
+			bindings
+			= <&macro_tap &to BASE>// First force switch to base layer
+			, <&macro_wait_time 30>// Wait a moment for the layer switch to complete
+			, <&macro_param_1to1>// Load parameter
+			, <&macro_tap &tog MACRO_PLACEHOLDER>// Toggle to lock the target layer
+			;
+		};
+		
+		euro_mac: behavior_macro {
+			bindings = <
+			&macro_press &kp LALT>,// Press Option (Left Alt)
+			<&macro_press &kp LSFT>,// Press Shift
+			<&macro_tap &kp N2>,// Tap the '2' key
+			<&macro_release &kp LSFT>,// Release Shift
+			<&macro_release &kp LALT>// Release Option
+			>;
+		};
+		
+		pound_mac: behavior_macro {
+			bindings = <
+			&macro_press &kp LALT>,// Press Option (Left Alt)
+			<&macro_tap &kp N3>,// Tap the '3' key
+			<&macro_release &kp LALT>// Release Option
+			>;
+		};
+		
+		yen_mac: behavior_macro {
+			bindings = <
+			&macro_press &kp LALT>,// Press Option (Left Alt)
+			<&macro_tap &kp Y>,// Tap the 'Y' key
+			<&macro_release &kp LALT>// Release Option
+			>;
+		};
+	};
 };
