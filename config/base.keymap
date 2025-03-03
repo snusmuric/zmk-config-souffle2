@@ -229,7 +229,7 @@
 		};
 		
 		mouse {
-			isplay-name = "Mouse";
+			display-name = "Mouse";
 			bindings = <
 			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7         &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
 			&kp LGUI              &kp PG_UP           &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L           &kp HOME                                         &kp SCRL_UP    &kp MY_LEFT_L            &kp MOVE_UP          &kp MY_RIGHT_L     &kp PG_UP          &trans
