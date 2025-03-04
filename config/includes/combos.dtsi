@@ -105,6 +105,7 @@
 			key-positions = <LM2 LM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
 		};
 		
 		combo_backspace_left {
@@ -112,6 +113,7 @@
 			key-positions = <LM3 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
 		};
 		
 		combo_enter_right {
@@ -119,6 +121,7 @@
 			key-positions = <RM1 RM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED>;
 		};
 		
 		combo_backspace_right {
@@ -126,6 +129,7 @@
 			key-positions = <RM2 RM3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED>;
 		};
 		
 		/*combo_lang_switch {
