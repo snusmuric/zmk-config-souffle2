@@ -71,7 +71,7 @@
 			&sk LGUI              &kp Q            &kp W            &kp E            &kp R                  &kp T                                                                                       &kp Y           &kp U                 &kp I          &kp O          &kp P             &ht RGUI RBKT
 			&sk LCTRL             &hm_l LCTRL A    &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &ht RCTRL LBKT
 			&sk LEFT_ALT          &kp Z            &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RALT SQT
-			&td_hyper_capsword_l  &lt ADJUST ESC   &mo NAV_LEFTHAND_SELECTION  &ht LSHFT SPACE  &lt NAV TAB                                                             &sl SYM  &ht RSHFT BSPC  &lt NUM DEL  &lt FUNCT ENTER  &td_meh_capsword_r
+			&td_hyper_capsword_l  &lt ADJUST ESC   &mo MOUSE        &ht LSHFT SPACE  &lt NAV TAB                                                                        &sl SYM  &ht RSHFT BSPC  &lt NUM DEL  &lt FUNCT ENTER  &td_meh_capsword_r
 			>;
 			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
@@ -108,7 +108,7 @@
 		num_layer_locked {
 			display-name = "Num";
 			bindings = <
-			&kp F1              &kp F2              &kp F3         &kp F4                &kp F5                &kp F6                                           &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
+			&kp N1              &kp N2              &kp N3         &kp N4                &kp N5                &kp N6                                           &kp N7     &kp N8                   &kp N9                       &kp N0                        &kp F11               &kp F12
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                         &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                        &kp PIPE   &hm_shift_r RSHFT COLON  &hm_r RGUI LEFT_PARENTHESIS  &hm_r RALT RIGHT_PARENTHESIS  &hm_r RCTRL QUESTION  &trans
 			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT     &to BASE                     &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &trans
@@ -122,7 +122,7 @@
 		sym_word_layer {
 			display-name = "Sym Word";
 			bindings = <
-			&kp F1                &kp F2                           &kp F3                &kp F4                  &kp F5                  &kp F6                                          &kp F7     &kp F8                    &kp F9                        &kp F10                         &kp F11               &kp F12
+			&kp N1                &kp N2                           &kp N3                &kp N4                  &kp N5                  &kp N6                                          &kp N7      &kp N8                   &kp N9                        &kp N0                          &kp F11               &kp F12
 			&trans                &kp SQT                          &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                                         &kp AMPS   &kp SEMICOLON             &kp LEFT_BRACKET              &kp RIGHT_BRACKET               &kp PERCENT           &curr_euro
 			&trans                &hm_l LCTRL EXCLAMATION          &hm_l LGUI MINUS      &hm_shift_l LSHFT PLUS  &kp EQUAL               &kp HASH                                        &kp PIPE   &hm_shift_r RSHFT COLON   &hm_r RGUI LEFT_PARENTHESIS   &hm_r RCTRL RIGHT_PARENTHESIS   &kp QUESTION          &curr_pound
 			&trans                &kp CARET                        &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED               &trans  &kp TILDE  &kp DOLLAR                &kp LEFT_BRACE                &kp RIGHT_BRACE                 &kp AT_SIGN           &curr_yen
@@ -136,7 +136,7 @@
 		sym_layer {
 			display-name = "Sym";
 			bindings = <
-			&kp F1              &kp F2                   &kp F3                &kp F4                  &kp F5                  &kp F6                                            &kp F7     &kp F8                   &kp F9                       &kp F10                       &kp F11               &kp F12
+			&kp N1              &kp N2                   &kp N3                &kp N4                  &kp N5                  &kp N6                                            &kp N7     &kp N8                   &kp N9                       &kp N0                        &kp F11               &kp F12
 			&trans              &kp SQT                  &kp LESS_THAN         &ht GRAVE GREATER_THAN  &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &euro_mac
 			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH                                          &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &pound_mac
 			&trans              &kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED                 &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &yen_mac
@@ -218,7 +218,7 @@
 		nav_layer_lefthand_selection {
 			display-name = "NavLS";
 			bindings = <
-			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7          &kp F8                       &kp F9               &kp F10                &kp F1                   &kp F12
+			&kp F1                &kp F2              &kp F3                   &kp F4               &kp F5                   &kp F6                                           &kp F7          &kp F8                       &kp F9               &kp F10                &kp F11                  &kp F12
 			&kp LGUI              &kp LG(W)           &kp LS(MY_LEFT_L)        &kp LS(UP)           &kp LS(MY_RIGHT_L)       &kp LS(HOME)                                     &kp RS(HOME)    &kp RS(MY_LEFT_L)            &kp RS(UP)           &kp RS(MY_RIGHT_L)     &kp RS(PG_UP)            &trans
 			&trans                &kp LG(A)           &kp LS(LEFT)             &kp LS(DOWN)         &kp LS(RIGHT)            &kp LS(END)                                      &kp RS(END)     &hm_shift_r RSHFT RS(LEFT)   &hm_r RGUI RS(DOWN)  &hm_r RALT RS(RIGHT)   &hm_r RCTRL RS(PG_DN)    &kp SCROLLLOCK
 			&kp LALT              &kp MY_UNDO         &kp LS(MY_LEFT_W)        &kp MY_COPY          &kp LS(MY_RIGHT_W)       &kp INSERT    &to BASE                  &trans   &kp INSERT      &kp RS(MY_LEFT_W)            &none                &kp RS(MY_RIGHT_W)     &kp DEL                 &kp PAUSE_BREAK
@@ -231,11 +231,11 @@
 		mouse {
 			display-name = "Mouse";
 			bindings = <
-			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                         &kp F7          &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
-			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                       &msc SCRL_UP    &kp MY_LEFT_L            &mmv MOVE_UP         &kp MY_RIGHT_L     &kp PG_UP          &trans
-			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                        &msc SCRL_DOWN  &mmv MOVE_LEFT           &mmv MOVE_DOWN       &mmv MOVE_RIGHT    &hm_r RCTRL PG_DN  &kp SCROLLLOCK
-			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none     &to BASE                     &trans  &kp INSERT      &msc SCRL_LEFT           &none                &msc SCRL_RIGHT    &kp DEL            &kp PAUSE_BREAK
-			&trans  &to BASE &trans  &trans  &trans                                                                                                            &mkp LCLK  &mkp RCLK   &mkp MCLK  &trans  &tog NAV
+			&kp N1                &kp N2                  &kp N3            &kp N4                &kp N5                &kp N6                                         &kp N7          &kp N8                   &kp N9               &kp N0             &kp F11            &kp F12
+			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                       &msc SCRL_DOWN  &msc SCRL_RIGHT          &mmv MOVE_UP         &msc SCRL_LEFT     &kp PG_UP          &trans
+			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                        &msc SCRL_UP    &mmv MOVE_LEFT           &mmv MOVE_DOWN       &mmv MOVE_RIGHT    &hm_r RCTRL PG_DN  &kp SCROLLLOCK
+			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none     &to BASE                     &trans  &kp INSERT      &mkp MB4                 &none                &mkp MB5           &kp DEL            &kp PAUSE_BREAK
+			&td_hyper_capsword_l  &to BASE &trans  &trans  &trans                                                                                                      &mkp LCLK  &mkp RCLK   &mkp MCLK  &trans  &td_meh_capsword_r
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
