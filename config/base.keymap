@@ -234,8 +234,8 @@
 			display-name = "Mouse";
 			bindings = <
 			&kp N1                &kp N2                  &kp N3            &kp N4                &kp N5                &kp N6                                         &kp N7          &kp N8                   &kp N9               &kp N0             &kp F11            &kp F12
-			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                       &msc SCRL_DOWN  &msc SCRL_RIGHT          &mmv MOVE_UP         &msc SCRL_LEFT     &kp PG_UP          &trans
-			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                        &msc SCRL_UP    &mmv MOVE_LEFT           &mmv MOVE_DOWN       &mmv MOVE_RIGHT    &hm_r RCTRL PG_DN  &kp SCROLLLOCK
+			&kp LGUI              &kp PG_UP               &trans            &kp UP                &kp MY_REDO           &kp HOME                                       &msc SCRL_UP    &msc SCRL_LEFT           &mmv MOVE_UP         &msc SCRL_RIGHT    &kp PG_UP          &trans
+			&trans                &hm_l_a_pgdn LCTRL 0    &hm_l LALT LEFT   &hm_l LGUI DOWN       &hm_l LSHFT RIGHT     &kp END                                        &msc SCRL_DOWN  &mmv MOVE_LEFT           &mmv MOVE_DOWN       &mmv MOVE_RIGHT    &hm_r RCTRL PG_DN  &kp SCROLLLOCK
 			&kp LALT              &kp MY_UNDO             &kp MY_CUT        &kp MY_COPY           &kp MY_PASTE          &none     &to BASE                     &trans  &kp INSERT      &mkp MB4                 &none                &mkp MB5           &kp DEL            &kp PAUSE_BREAK
 			&td_hyper_capsword_l  &to BASE &trans  &trans  &trans                                                                                                      &mkp LCLK  &mkp RCLK   &mkp MCLK  &trans  &td_meh_capsword_r
 			>;
