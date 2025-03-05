@@ -50,8 +50,6 @@
 // #include "includes/mouse_keys.dtsi"
 // #endif
 
-#include "includes/mouse_processors.dtsi"
-
 /*                                      60 KEY MATRIX / LAYOUT MAPPING
 
 ╭────────────────────────────┬────────────────────────────╮ ╭─────────────────────────────┬─────────────────────────────╮
@@ -64,17 +62,6 @@
 */
 
 / {
-	input-processors {
-		mouse_fast_processors: mouse_fast_processors {
-			processors = <&fast_mouse_processor 3 1>;
-			layers = <MOUSE_FAST>;
-		};
-		mouse_slow_processors: mouse_slow_processors {
-			processors = <&slow_mouse_processor 1 3>;
-			layers = <MOUSE_SLOW>;
-		};
-	};
-
 	keymap {
 		compatible = "zmk,keymap";
 		
@@ -252,7 +239,7 @@
 			&trans                &trans                  &trans            &trans                &trans                &trans                                         &trans          &trans                   &trans               &trans             &trans            &trans
 			&trans                &trans                  &trans            &trans                &trans                &trans                                         &trans          &trans                   &trans               &trans             &trans            &trans
 			&trans                &trans                  &trans            &trans                &trans                &trans                                         &trans          &trans                   &trans               &trans             &trans            &trans
-			&trans                &kp F                  &trans            &trans                &trans                &trans    &trans                       &trans  &trans          &trans                   &trans               &trans             &trans            &trans
+			&trans                &trans                  &trans            &trans                &trans                &trans    &trans                       &trans  &trans          &trans                   &trans               &trans             &trans            &trans
 			&td_hyper_capsword_l  &trans &trans  &trans  &trans                                                                                                &trans  &trans  &trans  &trans  &td_meh_capsword_r
 			>;
 			
@@ -265,7 +252,7 @@
 			&trans                &trans                  &trans            &trans                &trans                &trans                                         &trans          &trans                   &trans               &trans             &trans            &trans
 			&trans                &trans                  &trans            &trans                &trans                &trans                                         &trans          &trans                   &trans               &trans             &trans            &trans
 			&trans                &trans                  &trans            &trans                &trans                &trans                                         &trans          &trans                   &trans               &trans             &trans            &trans
-			&trans                &kp S                  &trans            &trans                &trans                &trans    &trans                       &trans  &trans          &trans                   &trans               &trans             &trans            &trans
+			&trans                &trans                  &trans            &trans                &trans                &trans    &trans                       &trans  &trans          &trans                   &trans               &trans             &trans            &trans
 			&td_hyper_capsword_l  &trans &trans  &trans  &trans                                                                                                &trans  &trans  &trans  &trans  &td_meh_capsword_r
 			>;
 			
@@ -311,5 +298,16 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
+	};
+};
+
+&mmv_input_listener {
+	fast {
+		layers = <MOUSE_FAST>;
+		input-processors = <&zip_xy_scaler 3 1>;
+	};
+	slow {
+		layers = <MOUSE_SLOW>;
+		input-processors = <&zip_xy_scaler 1 3>;
 	};
 };
