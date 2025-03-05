@@ -64,6 +64,17 @@
 */
 
 / {
+	input-processors {
+		mouse_fast_processors: mouse_fast_processors {
+			processors = <&fast_mouse_processor 3 1>;
+			layers = <MOUSE_FAST>;
+		};
+		mouse_slow_processors: mouse_slow_processors {
+			processors = <&slow_mouse_processor 1 3>;
+			layers = <MOUSE_SLOW>;
+		};
+	};
+
 	keymap {
 		compatible = "zmk,keymap";
 		
@@ -76,7 +87,6 @@
 			&sk LEFT_ALT          &kp Z            &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RALT SQT
 			&td_hyper_capsword_l  &lt ADJUST ESC   &mo MOUSE        &ht LSHFT SPACE  &lt NAV TAB                                                                        &sl SYM  &ht RSHFT BSPC  &lt NUM DEL  &lt FUNCT ENTER  &td_meh_capsword_r
 			>;
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -90,7 +100,6 @@
 			&trans  &to BASE &trans  &trans   &trans                                                                                                    &trans  &trans   &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -104,7 +113,6 @@
 			&trans  &to BASE &trans  &trans  &trans                                                                                                             &trans  &trans   &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -118,7 +126,6 @@
 			&trans  &to BASE &trans  &trans  &trans                                                                                                    &trans  &trans   &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -132,7 +139,6 @@
 			&trans  &to BASE &trans  &trans  &trans                                                                                                                              &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -146,7 +152,6 @@
 			&trans   &to BASE  &kp DOT  &trans  &kp COMMA                                                                                                                &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -160,7 +165,6 @@
 			&trans   &to BASE  &kp DOT  &trans  &kp COMMA                                                                                                               &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -174,7 +178,6 @@
 			&trans  &trans  &to BASE  &trans  &trans                                                                                                             &trans  &trans   &trans  &trans  &tog NAV
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -201,7 +204,6 @@
 			&trans  &trans  &to BASE  &trans  &trans                                                                                                          &trans  &trans   &trans  &trans   &to BASE
 			>;
 			
-			//sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -254,7 +256,6 @@
 			&td_hyper_capsword_l  &trans &trans  &trans  &trans                                                                                                &trans  &trans  &trans  &trans  &td_meh_capsword_r
 			>;
 			
-			input-processors = <&fast_mouse_processor 3 1>;  // 3x faster
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 
@@ -268,7 +269,6 @@
 			&td_hyper_capsword_l  &trans &trans  &trans  &trans                                                                                                &trans  &trans  &trans  &trans  &td_meh_capsword_r
 			>;
 			
-			input-processors = <&slow_mouse_processor 1 3>;  // 3x slower
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -282,7 +282,6 @@
 			&trans  &to BASE &trans  &trans  &trans                                                                           &trans  &trans  &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
@@ -296,7 +295,6 @@
 			&trans  &to BASE &trans  &trans  &trans                                                                           &trans  &trans  &trans  &trans  &trans
 			>;
 			
-			// sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
