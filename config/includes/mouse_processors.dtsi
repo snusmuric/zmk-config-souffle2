@@ -1,5 +1,5 @@
 / {
-    input_processors {
+    input-processors {
         fast_mouse_processor: fast_mouse_processor {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
