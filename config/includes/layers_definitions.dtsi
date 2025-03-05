@@ -12,7 +12,9 @@
 #define NAV_LEFTHAND 10
 #define NAV_LEFTHAND_SELECTION 11
 #define MOUSE 12
-#define FUNCT 13
-#define FUNCT_LOCKED 14
-#define ADJUST 15
-#define ADJUST_LOCKED 15
+#define MOUSE_FAST 13
+#define MOUSE_SLOW 14
+#define FUNCT 15
+#define FUNCT_LOCKED 16
+#define ADJUST 17
+#define ADJUST_LOCKED 18
