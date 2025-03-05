@@ -5,8 +5,6 @@
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_X INPUT_REL_Y>;
-            multiplier = <3>;  // 3x faster
-            divisor = <1>;
         };
         
         slow_mouse_processor: slow_mouse_processor {
@@ -14,8 +12,6 @@
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_X INPUT_REL_Y>;
-            multiplier = <1>;
-            divisor = <3>;  // 3x slower
         };
     };
 }; 

@@ -254,7 +254,7 @@
 			&td_hyper_capsword_l  &trans &trans  &trans  &trans                                                                                                &trans  &trans  &trans  &trans  &td_meh_capsword_r
 			>;
 			
-			input-processors = <&fast_mouse_processor>;
+			input-processors = <&fast_mouse_processor 3 1>;  // 3x faster
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 
@@ -268,7 +268,7 @@
 			&td_hyper_capsword_l  &trans &trans  &trans  &trans                                                                                                &trans  &trans  &trans  &trans  &td_meh_capsword_r
 			>;
 			
-			input-processors = <&slow_mouse_processor>;
+			input-processors = <&slow_mouse_processor 1 3>;  // 3x slower
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
