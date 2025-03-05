@@ -310,6 +310,6 @@
 	};
 	slow {
 		layers = <MOUSE_SLOW>;
-		input-processors = <&zip_xy_scaler 1 3>;
+		input-processors = <&zip_xy_scaler 1 2>;
 	};
 };
