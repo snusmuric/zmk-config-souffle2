@@ -16,7 +16,6 @@ echo "- Root directory: $KEYMAP_DIR"
 echo "- Config directory: $CONFIG_DIR"
 echo "- Tools directory: $TOOLS_DIR"
 echo "- Output directory: $OUT_DIR"
-echo "- Keymap drawer directory: $KEYMAP_DRAWER_DIR"
 echo "- SVG output: $SVG_OUTPUT"
 
 # Ensure output directory exists
@@ -28,8 +27,25 @@ python3 "$TOOLS_DIR/process_keymap.py" "$CONFIG_DIR/base.keymap" "$OUT_DIR/proce
 
 # Step 2: Generate YAML configuration
 echo -e "\nGenerating YAML configuration..."
-cd "$KEYMAP_DRAWER_DIR"
-python -m keymap_drawer parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
+
+# Check if keymap-drawer is installed as a package
+if command -v keymap &> /dev/null; then
+    echo "Using installed keymap-drawer package"
+    keymap parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
+else
+    # Check if repository exists
+    if [ -d "$KEYMAP_DRAWER_DIR" ]; then
+        echo "Using local keymap-drawer repository"
+        cd "$KEYMAP_DRAWER_DIR"
+        python -m keymap_drawer parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
+        cd "$TOOLS_DIR"
+    else
+        echo "ERROR: keymap-drawer not found. Please either:"
+        echo "1. Install keymap-drawer: pip install keymap-drawer, or"
+        echo "2. Clone the repository: git clone https://github.com/caksoylar/keymap-drawer.git $KEYMAP_DRAWER_DIR"
+        exit 1
+    fi
+fi
 
 # Update YAML to specify the correct layout (sofle)
 echo -e "\nUpdating YAML layout..."
@@ -61,7 +77,19 @@ fi
 
 # Step 3: Generate SVG visualization
 echo -e "\nGenerating SVG visualization..."
-python -m keymap_drawer draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
+if command -v keymap &> /dev/null; then
+    keymap draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
+else
+    if [ -d "$KEYMAP_DRAWER_DIR" ]; then
+        cd "$KEYMAP_DRAWER_DIR"
+        python -m keymap_drawer draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
+        cd "$TOOLS_DIR"
+    else
+        # This should never happen since we already checked above
+        echo "ERROR: keymap-drawer not found"
+        exit 1
+    fi
+fi
 
 # Check if the SVG was generated
 if [ -f "$SVG_OUTPUT" ]; then

@@ -11,16 +11,38 @@ This directory contains tools for processing ZMK keymap files to:
 
 ### Prerequisites
 
-- Python 3.6 or newer
+- Python 3.10 or newer
 - `keymap-drawer` (for visualization)
 
-### Installing Dependencies
+### Installing keymap-drawer
 
-1. Install Python from [python.org](https://python.org) if you don't have it already.
+There are two ways to set up keymap-drawer:
 
-2. Install `keymap-drawer`:
+#### Option 1: Install as a Python package (Recommended)
+
+Install `keymap-drawer` directly from PyPI:
+
+```bash
+pip install keymap-drawer
+```
+
+This method is simpler and doesn't require keeping source code in your project.
+
+#### Option 2: Clone the repository
+
+If you prefer having the source code available:
+
+1. Clone the repository into the parent directory:
+
    ```bash
-   pip install keymap-drawer
+   git clone https://github.com/caksoylar/keymap-drawer.git ../keymap-drawer
+   ```
+
+2. Install in development mode:
+   ```bash
+   cd ../keymap-drawer
+   pip install -e .
+   cd ../keymap-tools
    ```
 
 ## Quick Start
@@ -38,7 +60,7 @@ This script will:
 3. Update the YAML with the correct keyboard layout
 4. Create an SVG visualization
 
-All output files will be saved in this directory.
+Intermediate files will be stored in the `out` directory, and the final SVG will be placed in the root project folder.
 
 ## Manual Process
 
@@ -49,7 +71,7 @@ If you prefer to run the steps manually or need more control:
 The `process_keymap.py` script takes a ZMK keymap file with includes and creates a consolidated file:
 
 ```bash
-python3 process_keymap.py ../config/base.keymap ./processed_keymap.keymap
+python3 process_keymap.py ../config/base.keymap ./out/processed_keymap.keymap
 ```
 
 ### Step 2: Generate YAML Configuration
@@ -57,8 +79,13 @@ python3 process_keymap.py ../config/base.keymap ./processed_keymap.keymap
 Generate a YAML configuration from the processed keymap:
 
 ```bash
+# If using installed package:
+keymap parse -z ./out/processed_keymap.keymap -o ./out/keymap.yaml
+
+# If using cloned repository:
 cd ../keymap-drawer
-python -m keymap_drawer parse -z ../keymap-tools/processed_keymap.keymap -o ../keymap-tools/keymap.yaml
+python -m keymap_drawer parse -z ../keymap-tools/out/processed_keymap.keymap -o ../keymap-tools/out/keymap.yaml
+cd ../keymap-tools
 ```
 
 ### Step 3: Edit YAML Configuration (if needed)
@@ -74,16 +101,21 @@ layout: { zmk_keyboard: sofle }
 Generate an SVG visualization of your keymap:
 
 ```bash
+# If using installed package:
+keymap draw ./out/keymap.yaml -o ../keymap.svg
+
+# If using cloned repository:
 cd ../keymap-drawer
-python -m keymap_drawer draw ../keymap-tools/keymap.yaml -o ../keymap-tools/keymap.svg
+python -m keymap_drawer draw ../keymap-tools/out/keymap.yaml -o ../keymap.svg
+cd ../keymap-tools
 ```
 
 ## Files Description
 
 - `process_keymap.py`: Main Python script for processing ZMK keymap files
-- `processed_keymap.keymap`: Consolidated keymap file with resolved includes and numeric values
-- `keymap.yaml`: Configuration file for keymap-drawer
-- `keymap.svg`: SVG visualization of your keyboard layout
+- `out/processed_keymap.keymap`: Consolidated keymap file with resolved includes and numeric values
+- `out/keymap.yaml`: Configuration file for keymap-drawer
+- `../keymap.svg`: SVG visualization of your keyboard layout in the root directory
 - `generate_keymap_visualization.sh`: All-in-one script to generate the visualization
 
 ## Troubleshooting

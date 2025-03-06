@@ -24,9 +24,36 @@ To build and flash this firmware:
 3. Build the firmware using the ZMK build scripts
 4. Flash the firmware to your keyboard
 
-## Layout Visualization
+## Setup Layout Visualization
 
-The keyboard layout visualization is automatically generated using the `keymap-tools` scripts. To update the visualization after making changes to your keymap:
+This project uses [keymap-drawer](https://github.com/caksoylar/keymap-drawer) to generate keyboard layout visualizations. To set this up:
+
+### Option 1: Install as a Python package (Recommended)
+
+1. Make sure you have Python 3.10+ installed
+2. Install keymap-drawer using pip:
+   ```bash
+   pip install keymap-drawer
+   ```
+
+### Option 2: Clone the repository
+
+If you prefer to have the source code available:
+
+1. Clone the keymap-drawer repository into this project:
+   ```bash
+   git clone https://github.com/caksoylar/keymap-drawer.git
+   ```
+2. Install the required dependencies:
+   ```bash
+   cd keymap-drawer
+   pip install -e .
+   cd ..
+   ```
+
+## Generating Layout Visualization
+
+To update the visualization after making changes to your keymap:
 
 ```bash
 cd keymap-tools
