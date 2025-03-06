@@ -106,12 +106,12 @@ fi
 # Check if the YAML file has combos section already
 if ! grep -q "^combos:" "$OUT_DIR/keymap.yaml"; then
     echo "No combos found in the parsed output. Extracting combos from processed keymap..."
-    
+
     # Extract combo information from processed keymap.keymap
     COMBOS_FILE="$OUT_DIR/combos.yml"
     # Extract all combo definitions, format as YAML
     grep -A 6 "combo_" "$OUT_DIR/processed_keymap.keymap" | grep -E 'combo_|bindings|key-positions|timeout-ms|require-prior-idle-ms' | sed 's/;//' | sed 's/{//' | sed 's/}//' | sed 's/^\s*/  /' | sed 's/combo_\(.*\):/- name: \1/' | sed 's/bindings = /  binding: /' | sed 's/key-positions = /  positions: /' | sed 's/timeout-ms = /  timeout: /' | sed 's/require-prior-idle-ms = /  prior-idle: /' > "$COMBOS_FILE"
-    
+
     # Add combos section to YAML file
     TMP_YAML=$(mktemp)
     cat "$OUT_DIR/keymap.yaml" > "$TMP_YAML"
@@ -145,10 +145,10 @@ COMBO_FILE="$CONFIG_DIR/includes/combos.dtsi"
 
 if [ -f "$COMBO_FILE" ]; then
     echo "Found combos file: $COMBO_FILE"
-    
+
     # Create a temporary file for combos
     TMP_COMBOS=$(mktemp)
-    
+
     # Create a YAML combos section with the format keymap-drawer expects
     cat > "$TMP_COMBOS" << 'EOF'
 combos:
@@ -183,7 +183,7 @@ combos:
   - p: [3, 15]
     k: LA(LG(N6))
 EOF
-    
+
     # Check if the YAML file has a combos section
     if grep -q "^combos:" "$OUT_DIR/keymap.yaml"; then
         echo "Replacing existing combos section in YAML file"
@@ -191,14 +191,14 @@ EOF
         sed -i.bak '/^combos:/,/^[a-z]*:/s/^  - p:.*$//' "$OUT_DIR/keymap.yaml"
         sed -i.bak '/^combos:/,/^[a-z]*:/s/^    k:.*$//' "$OUT_DIR/keymap.yaml"
     fi
-    
+
     # Append the combos to the keymap.yaml file
     cat "$TMP_COMBOS" >> "$OUT_DIR/keymap.yaml"
     echo "Adding combos to YAML file"
-    
+
     # Clean up temp file
     rm "$TMP_COMBOS"
-    
+
     # Check for potentially problematic cross-half combos
     echo -e "\nChecking for cross-half combos..."
     # Left half positions: 0-5, 12-17, 24-29, 36-42, 50-54
@@ -213,11 +213,11 @@ echo -e "\nMerging configuration settings into keymap.yaml..."
 if [ -f "$CONFIG_FILE" ] && [ -f "$OUT_DIR/keymap.yaml" ]; then
     # Create a temporary file
     TMP_FILE=$(mktemp)
-    
+
     # Read the config file and append it to the keymap.yaml file
     cat "$OUT_DIR/keymap.yaml" > "$TMP_FILE"
     cat "$CONFIG_FILE" >> "$TMP_FILE"
-    
+
     # Move the temp file back to the original location
     mv "$TMP_FILE" "$OUT_DIR/keymap.yaml"
     echo "Configuration settings merged successfully"
