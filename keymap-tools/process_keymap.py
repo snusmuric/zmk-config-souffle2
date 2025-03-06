@@ -4,6 +4,8 @@ import re
 import os
 import sys
 from pathlib import Path
+import subprocess
+import yaml
 
 def read_file(path):
     """Read the content of a file."""
@@ -102,7 +104,8 @@ def extract_defines(content):
 def extract_key_positions(content):
     """Extract key position definitions from a file."""
     key_positions = {}
-    key_pos_pattern = r'^\s*#define\s+(L[NTMB][0-5]|R[NTMB][0-5]|L[H][0-4]|R[H][0-4]|[LR]EC)\s+(\d+)\s*'
+    # Updated pattern to capture all key position definitions in sofle.h or other files
+    key_pos_pattern = r'^\s*#define\s+(L[NTMBH][0-5]|R[NTMBH][0-5]|[LR]EC|L[H][0-4]|R[H][0-4])\s+(\d+)\s*'
     
     for line in content.split('\n'):
         match = re.search(key_pos_pattern, line)
@@ -110,6 +113,7 @@ def extract_key_positions(content):
             key = match.group(1)
             value = match.group(2)
             key_positions[key] = value
+            print(f"Found key position: {key} -> {value}")
     
     if key_positions:
         print(f"Extracted {len(key_positions)} key positions")
@@ -183,16 +187,20 @@ def process_keymap(keymap_path, output_path):
         print("WARNING: No key positions found. Using hardcoded Sofle layout...")
         # Manual key positions based on the standard Sofle layout
         key_positions = {
-            "LN0": "5", "LN1": "4", "LN2": "3", "LN3": "2", "LN4": "1", "LN5": "0",
+            # Left half (L prefix)
+            "LN5": "0", "LN4": "1", "LN3": "2", "LN2": "3", "LN1": "4", "LN0": "5",
+            "LT5": "12", "LT4": "13", "LT3": "14", "LT2": "15", "LT1": "16", "LT0": "17",
+            "LM5": "24", "LM4": "25", "LM3": "26", "LM2": "27", "LM1": "28", "LM0": "29",
+            "LB5": "36", "LB4": "37", "LB3": "38", "LB2": "39", "LB1": "40", "LB0": "41",
+            "LEC": "42",
+            "LH4": "50", "LH3": "51", "LH2": "52", "LH1": "53", "LH0": "54",
+            
+            # Right half (R prefix)
             "RN0": "6", "RN1": "7", "RN2": "8", "RN3": "9", "RN4": "10", "RN5": "11",
-            "LT0": "17", "LT1": "16", "LT2": "15", "LT3": "14", "LT4": "13", "LT5": "12",
             "RT0": "18", "RT1": "19", "RT2": "20", "RT3": "21", "RT4": "22", "RT5": "23",
-            "LM0": "29", "LM1": "28", "LM2": "27", "LM3": "26", "LM4": "25", "LM5": "24",
             "RM0": "30", "RM1": "31", "RM2": "32", "RM3": "33", "RM4": "34", "RM5": "35",
-            "LB0": "41", "LB1": "40", "LB2": "39", "LB3": "38", "LB4": "37", "LB5": "36",
-            "LEC": "42", "REC": "43",
+            "REC": "43",
             "RB0": "44", "RB1": "45", "RB2": "46", "RB3": "47", "RB4": "48", "RB5": "49",
-            "LH0": "54", "LH1": "53", "LH2": "52", "LH3": "51", "LH4": "50",
             "RH0": "55", "RH1": "56", "RH2": "57", "RH3": "58", "RH4": "59"
         }
         print(f"Using manual key position mappings: {len(key_positions)} positions defined")
@@ -255,37 +263,306 @@ def process_keymap(keymap_path, output_path):
     # Return the processed content
     return processed_content
 
-def main():
-    """Main function for processing a keymap file."""
-    # Default paths based on the repository structure
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    keymap_path = os.path.join(os.path.dirname(current_dir), "config", "base.keymap")
-    output_path = os.path.join(current_dir, "processed_keymap.keymap")
+def extract_layer_definitions(layers_file_path):
+    """Extract layer definitions from the layers_definitions.dtsi file."""
+    if not os.path.exists(layers_file_path):
+        print(f"Layers definitions file not found: {layers_file_path}")
+        return {}
     
-    # Allow command line arguments to override defaults
-    if len(sys.argv) > 1:
-        keymap_path = os.path.abspath(sys.argv[1])
-    if len(sys.argv) > 2:
-        output_path = os.path.abspath(sys.argv[2])
+    # Read the layers file
+    layers_content = read_file(layers_file_path)
+    if not layers_content:
+        return {}
+    
+    # Extract layer definitions using regex
+    layer_pattern = r'#define\s+(\w+)\s+(\d+)'
+    layer_definitions = {}
+    
+    for match in re.finditer(layer_pattern, layers_content):
+        layer_name = match.group(1)
+        layer_value = match.group(2)
+        layer_definitions[layer_name] = layer_value
+    
+    print(f"Extracted {len(layer_definitions)} layer definitions")
+    print(f"Sample layer definitions: {list(layer_definitions.items())[:5]}")
+    
+    return layer_definitions
+
+def process_combos(combo_file_path, key_positions, layer_definitions=None):
+    """Process the combos file and extract combo definitions."""
+    if not os.path.exists(combo_file_path):
+        print(f"Combos file not found at {combo_file_path}")
+        return []
+    
+    print(f"Read file {combo_file_path}: {os.path.getsize(combo_file_path)} bytes")
+    with open(combo_file_path, 'r') as f:
+        combos_content = f.read()
+    
+    if not combos_content:
+        print("Combos file is empty")
+        return []
+    
+    print(f"Sample of combos content: {combos_content[:200]}...")
+    
+    # Parse each combo directly from the combos.dtsi file
+    yaml_combos = []
+
+    # Pattern to match combo definitions
+    combo_pattern = r'combo_(\w+)\s*{([^}]*)}'
+    combo_matches = re.finditer(combo_pattern, combos_content)
+    
+    combo_count = 0
+    for match in combo_matches:
+        combo_count += 1
+        name = match.group(1)
+        combo_body = match.group(2)
+        
+        # Extract key positions
+        key_pos_match = re.search(r'key-positions\s*=\s*<([^>]+)>', combo_body)
+        if not key_pos_match:
+            continue
+            
+        key_pos_str = key_pos_match.group(1)
+        positions = []
+        for pos in key_pos_str.split():
+            if pos in key_positions:
+                positions.append(int(key_positions[pos]))
+            elif pos.isdigit():
+                positions.append(int(pos))
+        
+        if not positions:
+            continue
+            
+        # Extract binding
+        binding_match = re.search(r'bindings\s*=\s*<([^>]+)>', combo_body)
+        if not binding_match:
+            continue
+            
+        binding = binding_match.group(1)
+        
+        # Extract key character from binding
+        key_char = binding
+        if '&kp ' in binding:
+            key_char = binding.replace('&kp ', '')
+            
+        # Extract layers if they exist
+        layers = ["BASE"]  # Default to BASE layer
+        layers_match = re.search(r'layers\s*=\s*<([^>]+)>', combo_body)
+        if layers_match and layer_definitions:
+            layers_str = layers_match.group(1)
+            layers = []
+            for layer in layers_str.split():
+                # Check if this is a numeric layer index
+                if layer.isdigit():
+                    layer_num = layer
+                    # Try to find the layer name for this index
+                    for name, idx in layer_definitions.items():
+                        if idx == layer:
+                            layers.append(name)
+                            break
+                    else:
+                        # If no matching name found, use the numeric value
+                        layers.append(f"Layer{layer_num}")
+                # Or check if it's a symbolic layer name
+                elif layer in layer_definitions:
+                    layers.append(layer)
+                else:
+                    layers.append(layer)
+        
+        # Add the combo to our list
+        yaml_combos.append({
+            'p': positions,
+            'k': key_char,
+            'l': layers
+        })
+    
+    print(f"Processed {combo_count} combos, extracted {len(yaml_combos)} valid combos")
+    
+    # For debugging, print the first few combos
+    if yaml_combos:
+        print("Sample of extracted combos:")
+        for i, combo in enumerate(yaml_combos[:3]):
+            print(f"  Combo {i+1}: positions={combo['p']}, key={combo['k']}, layers={combo['l']}")
+    else:
+        print("No combos were extracted. Examining the pattern match...")
+        # Debug the regex pattern
+        simple_combo_pattern = r'combo_\w+\s*{'
+        simple_matches = re.findall(simple_combo_pattern, combos_content)
+        print(f"Found {len(simple_matches)} basic combo definitions")
+        if simple_matches:
+            print(f"First few matches: {simple_matches[:5]}")
+            
+            # If no matches, print a sample of the combos file for inspection
+            print("Sample of combos file for inspection:")
+            lines = combos_content.split('\n')
+            print('\n'.join(lines[:min(20, len(lines))]))
+    
+    return yaml_combos
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python process_keymap.py <keymap_file> [output_file]")
+        sys.exit(1)
+    
+    keymap_path = sys.argv[1]
+    if len(sys.argv) >= 3:
+        output_path = sys.argv[2]
+    else:
+        output_path = os.path.join(os.path.dirname(keymap_path), "processed_keymap.keymap")
     
     print(f"Input file: {keymap_path}")
     print(f"Output file: {output_path}")
     
-    if not os.path.exists(keymap_path):
-        print(f"Error: Input file does not exist: {keymap_path}")
-        sys.exit(1)
+    base_dir = os.path.dirname(keymap_path)
+    project_root = os.path.dirname(os.path.dirname(keymap_path))
+    print(f"Base directory: {base_dir}")
+    print(f"Project root: {project_root}")
     
-    # Process the keymap
-    processed_content = process_keymap(keymap_path, output_path)
+    processed_keymap = process_keymap(keymap_path, output_path)
     
-    # Write the processed content to the output file
-    if processed_content:
-        with open(output_path, 'w') as f:
-            f.write(processed_content)
-        print(f"Processed keymap saved to {output_path}")
+    # Create output directory if it doesn't exist
+    output_dir = os.path.dirname(output_path)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    # Write the processed keymap to the output file
+    with open(output_path, 'w') as f:
+        f.write(processed_keymap)
+    
+    print(f"Processed keymap saved to {output_path}")
+    
+    print("\nNOTE: Combos are now processed directly within the Python script")
+    
+    # Extract layer definitions
+    layer_defs_file = os.path.join(base_dir, "includes", "layers_definitions.dtsi")
+    layer_definitions = extract_layer_definitions(layer_defs_file)
+    
+    # Extract key positions from ZMK key-labels header
+    key_positions = {}
+    try:
+        # Try to find the key-labels file
+        sofle_key_labels = os.path.join(project_root, "zmk-helpers", "include", "zmk-helpers", "key-labels", "sofle.h")
+        if os.path.exists(sofle_key_labels):
+            with open(sofle_key_labels, 'r') as f:
+                content = f.read()
+                key_positions = extract_key_positions(content)
+                print(f"Extracted {len(key_positions)} key positions")
+                print(f"Sample key positions: {list(key_positions.items())[:5]}")
+        else:
+            print(f"Key labels file not found at {sofle_key_labels}")
+    except Exception as e:
+        print(f"Error extracting key positions: {e}")
+    
+    if layer_definitions:
+        print(f"Made {len(layer_definitions)} layer name replacements")
+        print("\nLayer mapping:")
+        for layer_name, layer_value in layer_definitions.items():
+            print(f"Layer {layer_value}: {layer_name}")
+    
+    # Create the yaml config file path
+    yaml_path = os.path.join(output_dir, "keymap.yaml")
+    
+    # Call keymap-drawer to generate the yaml config
+    try:
+        print("\nGenerating YAML configuration...")
+        print("Using local keymap-drawer repository")
+        
+        # Parse processed keymap to yaml
+        subprocess.run(["python", "-m", "keymap_drawer", "parse", "-z", output_path, "-o", yaml_path], check=True)
+        
+        # Update YAML layout to sofle
+        print("\nUpdating YAML layout...")
+        try:
+            with open(yaml_path, 'r') as f:
+                yaml_content = yaml.safe_load(f)
+            
+            if yaml_content and 'layout' in yaml_content:
+                yaml_content['layout'] = {"zmk_keyboard": "sofle"}
+                with open(yaml_path, 'w') as f:
+                    yaml.dump(yaml_content, f, default_flow_style=False)
+                print("Updated YAML layout to 'sofle'")
     else:
-        print("Error: Failed to process keymap")
-        sys.exit(1)
+                print("Error: YAML file doesn't have the expected structure")
+        except Exception as e:
+            print(f"Error updating YAML layout: {e}")
+            print("Continuing with default layout")
+        
+        # Extract combos from the processed keymap
+        print("No combos found in the parsed output. Extracting combos from processed keymap...")
+        combos_file = os.path.join(base_dir, "includes", "combos.dtsi")
+        yaml_combos = process_combos(combos_file, key_positions, layer_definitions)
+        
+        # Add combos to the YAML file
+        if yaml_combos:
+            try:
+                with open(yaml_path, 'r') as f:
+                    yaml_content = yaml.safe_load(f)
+                
+                # Add the combos list to the yaml content
+                yaml_content['combos'] = yaml_combos
+                
+                # Write the updated yaml content back to the file
+                with open(yaml_path, 'w') as f:
+                    yaml.dump(yaml_content, f, default_flow_style=False)
+                
+                print("Added combos information to YAML file")
+            except Exception as e:
+                print(f"Error adding combos to YAML: {e}")
+                # If we encounter an error, try to append the combos in plain text
+                try:
+                    with open(yaml_path, 'a') as f:
+                        f.write("\ncombos:\n")
+                        for combo in yaml_combos:
+                            f.write(f"  - {{p: {combo['p']}, k: \"{combo['k']}\", l: {combo['l']}}}\n")
+                    print("Added combos information to YAML file (text mode)")
+                except Exception as e2:
+                    print(f"Error adding combos to YAML (text mode): {e2}")
+        
+        # Generate SVG visualization
+        print("\nGenerating SVG visualization...")
+        svg_output = os.path.join(project_root, "keymap.svg")
+        config_file = os.path.join(os.path.dirname(output_dir), "keymap_drawer.config.yaml")
+        
+        if os.path.exists(config_file):
+            print("\nMerging configuration settings into keymap.yaml...")
+            try:
+                # Load config file
+                with open(config_file, 'r') as f:
+                    config_content = yaml.safe_load(f)
+                
+                # Load the yaml file
+                with open(yaml_path, 'r') as f:
+                    yaml_content = yaml.safe_load(f)
+                
+                # Merge config settings into yaml_content
+                if config_content and yaml_content:
+                    # For each top-level key in config_content
+                    for key, value in config_content.items():
+                        if key not in yaml_content:
+                            yaml_content[key] = value
+                    
+                    # Write the merged content back to the yaml file
+                    with open(yaml_path, 'w') as f:
+                        yaml.dump(yaml_content, f, default_flow_style=False)
+                
+                print("Configuration settings merged successfully")
+            except Exception as e:
+                print(f"Error merging configuration settings: {e}")
+        
+        print("Using local keymap-drawer repository for drawing")
+        subprocess.run(["python", "-m", "keymap_drawer", "draw", yaml_path, svg_output], check=True)
+        
+        print("\nSuccess! SVG visualization created.")
+        
+        print("\nDone! Generated files:")
+        print(f"- Processed keymap: {output_path}")
+        print(f"- YAML config: {yaml_path}")
+        print(f"- SVG visualization: {svg_output}")
+    
+    except subprocess.CalledProcessError as e:
+        print(f"Error calling keymap-drawer: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main() 
