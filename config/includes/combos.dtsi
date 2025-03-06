@@ -44,32 +44,6 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
 		
-		// combo_esc2 {
-		// 	bindings = <&kp ESC>;
-		// 	key-positions = <LT4 LM4>;
-		// 	timeout-ms = <COMBO_TERM_FAST>;
-		// 	require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-		// };
-		
-		// combo_toggle_adjust_layer {
-		// 	bindings = <&tog ADJUST>;
-		// 	key-positions = <LH4 RH4>;
-		// 	timeout-ms = <COMBO_TERM_SLOW>;
-		// };
-		
-		// combo_toggle_funct_layer {
-		// 	bindings = <&tog FUNCT>;
-		// 	key-positions = <LH0 RH0>;
-		// 	timeout-ms = <COMBO_TERM_SLOW>;
-		// };
-		
-		// combo_toggle_funct_layer2 {
-		// 	bindings = <&mo FUNCT>;
-		// 	key-positions = <RH0 RH1>;
-		// 	timeout-ms = <COMBO_TERM_SLOW>;
-		// 	require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-		// };
-		
 		combo_toggle_num_layer_left {
 			bindings = <&tog NUM>;
 			key-positions = <LB0 LH1>;
@@ -93,12 +67,6 @@
 			key-positions = <RB1 RH2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
-		
-		// combo_toggle_num_layer {
-		// 	bindings = <&mo NUM>;
-		// 	key-positions = <RH1 RH2>;
-		// 	timeout-ms = <COMBO_TERM_SLOW>;
-		// };
 		
 		combo_enter_left {
 			bindings = <&kp ENTER>;
@@ -131,13 +99,6 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
 			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED>;
 		};
-		
-		/*combo_lang_switch {
-			bindings = <&kp LG(SPACE)>;
-			key-positions = <LM0 LB0>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-		};*/
 		
 		combo_lang_switch_win {
 			bindings = <&kp LA(LSHIFT)>;

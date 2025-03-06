@@ -162,14 +162,10 @@ combos:
     k: LG(C)
   - p: [40, 28]
     k: LG(V)
-  - p: [50, 40]
+  - p: [41, 53]
     k: NUM
-  - p: [51, 41]
+  - p: [40, 52]
     k: NAV_LEFTHAND_SELECTION
-  - p: [59, 49]
-    k: NUM
-  - p: [58, 48]
-    k: NAV
   - p: [27, 28]
     k: ENTER
   - p: [26, 27]
