@@ -446,7 +446,7 @@ def main():
             if yaml_content and 'layout' in yaml_content:
                 yaml_content['layout'] = {"zmk_keyboard": "sofle"}
                 with open(yaml_path, 'w') as f:
-                    yaml.dump(yaml_content, f, default_flow_style=False)
+                    yaml.dump(yaml_content, f, default_flow_style=False, sort_keys=False)
                     print(f"YAML written to: {yaml_path}")
                     
                 # Verify file content after writing
@@ -477,24 +477,12 @@ def main():
                     print("Existing YAML content keys:", yaml_content.keys())
                 
                 # Ensure combos section exists and preserve any existing combos
-                if 'combos' not in yaml_content:
-                    print("Creating new combos section")
-                    yaml_content['combos'] = []
-                
-                # Add new combos
-                print(f"Adding {len(yaml_combos)} combos to YAML")
-                yaml_content['combos'].extend(yaml_combos)
-                
-                # Write updated content
-                with open(yaml_path, 'w') as f:
-                    yaml.dump(yaml_content, f, default_flow_style=False)
-                    print(f"YAML written to: {yaml_path}")
+                yaml_content.setdefault('combos', []).extend(yaml_combos)
                     
                 print("Combos successfully added to YAML file")
                 print("Final YAML content keys:", yaml_content.keys())
             except Exception as e:
                 print(f"Error adding combos to YAML: {e}")
-                print("YAML content at time of error:", yaml_content)
         
         # Generate SVG visualization
         print("\nGenerating SVG visualization...")
@@ -503,38 +491,24 @@ def main():
         
         if os.path.exists(config_file):
             print("\nMerging configuration settings into keymap.yaml...")
+            with open(config_file, 'r') as f:
+                config_content = yaml.safe_load(f)
+            
+            if config_content and yaml_content:
+                yaml_content.update(config_content)
+            
+            # Write the merged content back to the yaml file
+            with open(yaml_path, 'w') as f:
+                yaml.dump(yaml_content, f, default_flow_style=False, sort_keys=False)
+                print(f"YAML written to: {yaml_path}")
+                
+            # Verify file content after writing
             try:
-                # Load config file
-                with open(config_file, 'r') as f:
-                    config_content = yaml.safe_load(f)
-                
-                # Load the yaml file
                 with open(yaml_path, 'r') as f:
-                    yaml_content = yaml.safe_load(f)
-                
-                # Merge config settings into yaml_content
-                if config_content and yaml_content:
-                    # For each top-level key in config_content
-                    for key, value in config_content.items():
-                        if key not in yaml_content:
-                            yaml_content[key] = value
-                    
-                    # Write the merged content back to the yaml file
-                    with open(yaml_path, 'w') as f:
-                        yaml.dump(yaml_content, f, default_flow_style=False)
-                        print(f"YAML written to: {yaml_path}")
-                        
-                    # Verify file content after writing
-                    try:
-                        with open(yaml_path, 'r') as f:
-                            written_content = yaml.safe_load(f)
-                            print("Written YAML content keys:", written_content.keys())
-                    except Exception as e:
-                        print(f"Error verifying written YAML: {e}")
-                
-                print("Configuration settings merged successfully")
+                    written_content = yaml.safe_load(f)
+                    print("Written YAML content keys:", written_content.keys())
             except Exception as e:
-                print(f"Error merging configuration settings: {e}")
+                print(f"Error verifying written YAML: {e}")
         
         print("Using local keymap-drawer repository for drawing")
         subprocess.run(["python", "-m", "keymap_drawer", "draw", "-o", svg_output, yaml_path], check=True)

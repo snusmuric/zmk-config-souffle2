@@ -59,6 +59,10 @@ fi
 # Ensure output directory exists
 mkdir -p "$OUT_DIR"
 
+# Clean output directory
+echo -e "\nCleaning output directory..."
+rm -f "$OUT_DIR"/*
+
 # Step 1: Process the keymap
 echo -e "\nProcessing keymap..."
 python3 "$TOOLS_DIR/process_keymap.py" "$CONFIG_DIR/base.keymap" "$OUT_DIR/processed_keymap.keymap"
@@ -66,16 +70,14 @@ python3 "$TOOLS_DIR/process_keymap.py" "$CONFIG_DIR/base.keymap" "$OUT_DIR/proce
 # Step 1.5: Combo processing is now handled directly in the process_keymap.py script
 echo -e "\nNOTE: Combos are now processed directly within the Python script"
 
-# Step 2: Generate YAML configuration
-echo -e "\nGenerating YAML configuration..."
+# Step 2: Generate SVG visualization
+echo -e "\nGenerating SVG visualization..."
 
-# Check if we should force local repo or if keymap command is not available
 if [ "$FORCE_LOCAL_REPO" = true ] || ! command -v keymap &> /dev/null; then
-    # Check if repository exists
     if [ -d "$KEYMAP_DRAWER_DIR" ]; then
-        echo "Using local keymap-drawer repository"
+        echo "Using local keymap-drawer repository for drawing"
         cd "$KEYMAP_DRAWER_DIR"
-        python -m keymap_drawer parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
+        python -m keymap_drawer draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
         cd "$TOOLS_DIR"
     else
         echo "ERROR: keymap-drawer repository not found at $KEYMAP_DRAWER_DIR"
@@ -83,74 +85,7 @@ if [ "$FORCE_LOCAL_REPO" = true ] || ! command -v keymap &> /dev/null; then
         exit 1
     fi
 else
-    echo "Using installed keymap-drawer package"
-    python -m keymap_drawer parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
-fi
-
-# Update YAML to specify the correct layout (sofle)
-echo -e "\nUpdating YAML layout..."
-if [ -f "$OUT_DIR/keymap.yaml" ]; then
-    # Create a temporary file for the update
-    TMP_FILE=$(mktemp)
-    # Update the layout line and save to temp file
-    sed 's/zmk_keyboard: processed_keymap/zmk_keyboard: sofle/g' "$OUT_DIR/keymap.yaml" > "$TMP_FILE"
-    # Move the temp file back to the original location
-    mv "$TMP_FILE" "$OUT_DIR/keymap.yaml"
-    echo "Updated YAML layout to 'sofle'"
-else
-    echo "ERROR: YAML file not found at $OUT_DIR/keymap.yaml"
-    echo "Parsing may have failed. Check for errors above."
-    exit 1
-fi
-
-# Manually copy a working example keymap.yaml if available
-if [ ! -s "$OUT_DIR/keymap.yaml" ]; then
-    echo "WARNING: YAML file is empty. Attempting to use a working example."
-    if [ -f "$KEYMAP_DIR/keymap.yaml" ]; then
-        cp "$KEYMAP_DIR/keymap.yaml" "$OUT_DIR/keymap.yaml"
-        echo "Copied existing keymap.yaml to $OUT_DIR/keymap.yaml"
-    else
-        echo "ERROR: No example YAML file found. Cannot continue."
-        exit 1
-    fi
-fi
-
-# Step 3: Generate SVG visualization
-echo -e "\nGenerating SVG visualization..."
-
-# Merge configuration settings into keymap.yaml directly
-echo -e "\nMerging configuration settings into keymap.yaml..."
-if [ -f "$CONFIG_FILE" ] && [ -f "$OUT_DIR/keymap.yaml" ]; then
-    # Create a temporary file
-    TMP_FILE=$(mktemp)
-
-    # Read the config file and append it to the keymap.yaml file
-    cat "$OUT_DIR/keymap.yaml" > "$TMP_FILE"
-    cat "$CONFIG_FILE" >> "$TMP_FILE"
-
-    # Move the temp file back to the original location
-    mv "$TMP_FILE" "$OUT_DIR/keymap.yaml"
-
-    echo "Configuration settings merged successfully"
-else
-    echo "WARNING: Either configuration file or keymap.yaml not found. Proceeding without custom configuration."
-fi
-
-if [ "$FORCE_LOCAL_REPO" = true ] || ! command -v keymap &> /dev/null; then
-    if [ -d "$KEYMAP_DRAWER_DIR" ]; then
-        echo "Using local keymap-drawer repository for drawing"
-        cd "$KEYMAP_DRAWER_DIR"
-        # Use the configuration file to customize key size and appearance
-        python -m keymap_drawer draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
-        cd "$TOOLS_DIR"
-    else
-        # This should never happen since we already checked above
-        echo "ERROR: keymap-drawer repository not found"
-        exit 1
-    fi
-else
     echo "Using installed keymap-drawer package for drawing"
-    # Use the configuration file to customize key size and appearance
     keymap draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
 fi
 
