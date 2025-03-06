@@ -1,3 +1,5 @@
 /.idea/
 .history/
 /out/
+/keymap-tools/out/
+/.venv/
