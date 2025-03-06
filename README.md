@@ -1,63 +1,43 @@
-# ZMK Config for Souffle Keyboard
+# Souffle Keyboard ZMK Configuration
 
-This repository contains the ZMK configuration for the Souffle keyboard, a customized split ergonomic keyboard based on the Sofle design.
+This repository contains the ZMK configuration for the Souffle split ergonomic keyboard, which is based on the Sofle design. The keyboard features a 5x6 matrix layout with an additional rotary encoder.
 
 ## Keyboard Layout
 
-The following visualization shows the current keyboard layout configuration:
+![Keyboard Layout](keymap.svg)
 
-![Souffle Keyboard Layout](./keymap.svg)
+## Overview
 
-## Features
+The Souffle configuration uses:
 
-- Split ergonomic design
-- Multiple layers for different functionality (Base, Navigation, Numbers, Symbols, etc.)
-- Custom keybindings optimized for programming and everyday typing
-- ZMK firmware for wireless connectivity
+- 5 rows x 6 columns per half
+- Homerow mods for improved ergonomics
+- Multiple layers for symbols, numbers, navigation, and function keys
+- Custom macros for improved productivity
+- Combos for frequently used keys and shortcuts
 
-## Getting Started
+## Tools
 
-To build and flash this firmware:
+This repository includes custom tools for working with ZMK keymaps:
 
-1. Follow the [ZMK documentation](https://zmk.dev/docs) for setting up your development environment
-2. Clone this repository
-3. Build the firmware using the ZMK build scripts
-4. Flash the firmware to your keyboard
+- **keymap-tools/process_keymap.py**: Processes ZMK keymap files, extracts key positions, and generates a consolidated keymap file
+- **keymap-tools/generate_keymap_visualization.sh**: All-in-one script that processes the keymap and generates an SVG visualization
 
-## Setup Layout Visualization
+## Setup and Usage
 
-This project uses [keymap-drawer](https://github.com/caksoylar/keymap-drawer) to generate keyboard layout visualizations. To set this up:
-
-### Option 1: Install as a Python package (Recommended)
-
-1. Make sure you have Python 3.10+ installed
-2. Install keymap-drawer using pip:
+1. Clone this repository
+2. Set up the environment:
    ```bash
-   pip install keymap-drawer
+   cd keymap-tools
+   ./generate_keymap_visualization.sh
    ```
 
-### Option 2: Clone the repository
+This will:
 
-If you prefer to have the source code available:
+- Check for and install keymap-drawer if needed
+- Process the ZMK keymap files
+- Generate a visual representation of the keyboard layout
 
-1. Clone the keymap-drawer repository into this project:
-   ```bash
-   git clone https://github.com/caksoylar/keymap-drawer.git
-   ```
-2. Install the required dependencies:
-   ```bash
-   cd keymap-drawer
-   pip install -e .
-   cd ..
-   ```
+## Support
 
-## Generating Layout Visualization
-
-To update the visualization after making changes to your keymap:
-
-```bash
-cd keymap-tools
-./generate_keymap_visualization.sh
-```
-
-This will process your keymap configuration and create an updated SVG visualization in the root directory.
+For questions and support with this configuration, please open an issue in this repository.

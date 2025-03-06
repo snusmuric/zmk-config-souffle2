@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Force using local repository instead of installed command
+FORCE_LOCAL_REPO=true
+
 # Define paths relative to the script location
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 KEYMAP_DIR="$( cd "$SCRIPT_DIR/.." && pwd )"
@@ -16,7 +19,38 @@ echo "- Root directory: $KEYMAP_DIR"
 echo "- Config directory: $CONFIG_DIR"
 echo "- Tools directory: $TOOLS_DIR"
 echo "- Output directory: $OUT_DIR"
+echo "- Keymap drawer directory: $KEYMAP_DRAWER_DIR"
 echo "- SVG output: $SVG_OUTPUT"
+
+# Check if keymap-drawer repository exists and install it if necessary
+if [ -d "$KEYMAP_DRAWER_DIR" ]; then
+    echo -e "\nChecking keymap-drawer installation..."
+    # Check if the package is installed in development mode
+    if ! pip list | grep -q "keymap-drawer.*\(editable\|dev\)"; then
+        echo "Installing keymap-drawer in development mode..."
+        cd "$KEYMAP_DRAWER_DIR"
+        pip install -e .
+        cd "$TOOLS_DIR"
+        echo "keymap-drawer installed successfully in development mode"
+    else
+        echo "keymap-drawer is already installed in development mode"
+    fi
+else
+    echo -e "\nWARNING: keymap-drawer repository not found at $KEYMAP_DRAWER_DIR"
+    echo "Would you like to clone and install it now? (y/n)"
+    read -r response
+    if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        echo "Cloning keymap-drawer repository..."
+        git clone https://github.com/caksoylar/keymap-drawer.git "$KEYMAP_DRAWER_DIR"
+        echo "Installing keymap-drawer in development mode..."
+        cd "$KEYMAP_DRAWER_DIR"
+        pip install -e .
+        cd "$TOOLS_DIR"
+        echo "keymap-drawer cloned and installed successfully"
+    else
+        echo "Continuing without local keymap-drawer repository"
+    fi
+fi
 
 # Ensure output directory exists
 mkdir -p "$OUT_DIR"
@@ -28,11 +62,8 @@ python3 "$TOOLS_DIR/process_keymap.py" "$CONFIG_DIR/base.keymap" "$OUT_DIR/proce
 # Step 2: Generate YAML configuration
 echo -e "\nGenerating YAML configuration..."
 
-# Check if keymap-drawer is installed as a package
-if command -v keymap &> /dev/null; then
-    echo "Using installed keymap-drawer package"
-    keymap parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
-else
+# Check if we should force local repo or if keymap command is not available
+if [ "$FORCE_LOCAL_REPO" = true ] || ! command -v keymap &> /dev/null; then
     # Check if repository exists
     if [ -d "$KEYMAP_DRAWER_DIR" ]; then
         echo "Using local keymap-drawer repository"
@@ -40,11 +71,13 @@ else
         python -m keymap_drawer parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
         cd "$TOOLS_DIR"
     else
-        echo "ERROR: keymap-drawer not found. Please either:"
-        echo "1. Install keymap-drawer: pip install keymap-drawer, or"
-        echo "2. Clone the repository: git clone https://github.com/caksoylar/keymap-drawer.git $KEYMAP_DRAWER_DIR"
+        echo "ERROR: keymap-drawer repository not found at $KEYMAP_DRAWER_DIR"
+        echo "Please clone the repository: git clone https://github.com/caksoylar/keymap-drawer.git $KEYMAP_DRAWER_DIR"
         exit 1
     fi
+else
+    echo "Using installed keymap-drawer package"
+    keymap parse -z "$OUT_DIR/processed_keymap.keymap" -o "$OUT_DIR/keymap.yaml"
 fi
 
 # Update YAML to specify the correct layout (sofle)
@@ -77,18 +110,20 @@ fi
 
 # Step 3: Generate SVG visualization
 echo -e "\nGenerating SVG visualization..."
-if command -v keymap &> /dev/null; then
-    keymap draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
-else
+if [ "$FORCE_LOCAL_REPO" = true ] || ! command -v keymap &> /dev/null; then
     if [ -d "$KEYMAP_DRAWER_DIR" ]; then
+        echo "Using local keymap-drawer repository for drawing"
         cd "$KEYMAP_DRAWER_DIR"
         python -m keymap_drawer draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
         cd "$TOOLS_DIR"
     else
         # This should never happen since we already checked above
-        echo "ERROR: keymap-drawer not found"
+        echo "ERROR: keymap-drawer repository not found"
         exit 1
     fi
+else
+    echo "Using installed keymap-drawer package for drawing"
+    keymap draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
 fi
 
 # Check if the SVG was generated
@@ -102,4 +137,4 @@ fi
 echo -e "\nDone! Generated files:"
 echo "- Processed keymap: $OUT_DIR/processed_keymap.keymap"
 echo "- YAML config: $OUT_DIR/keymap.yaml"
-echo "- SVG visualization: $SVG_OUTPUT" 
+echo "- SVG visualization: $SVG_OUTPUT"
