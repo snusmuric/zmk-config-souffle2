@@ -139,6 +139,79 @@ fi
 # Step 3: Generate SVG visualization
 echo -e "\nGenerating SVG visualization..."
 
+# Add combos directly to the YAML file
+echo -e "\nAdding combos to the YAML file..."
+COMBO_FILE="$CONFIG_DIR/includes/combos.dtsi"
+
+if [ -f "$COMBO_FILE" ]; then
+    echo "Found combos file: $COMBO_FILE"
+    
+    # Create a temporary file for combos
+    TMP_COMBOS=$(mktemp)
+    
+    # Create a YAML combos section with the format keymap-drawer expects
+    cat > "$TMP_COMBOS" << 'EOF'
+combos:
+  - p: [37, 25]
+    k: LG(Z)
+  - p: [28, 27]
+    k: MY_REDO
+  - p: [38, 26]
+    k: LG(X)
+  - p: [39, 27]
+    k: LG(C)
+  - p: [40, 28]
+    k: LG(V)
+  - p: [50, 40]
+    k: NUM
+  - p: [51, 41]
+    k: NAV_LEFTHAND_SELECTION
+  - p: [59, 49]
+    k: NUM
+  - p: [58, 48]
+    k: NAV
+  - p: [27, 28]
+    k: ENTER
+  - p: [26, 27]
+    k: BACKSPACE
+  - p: [31, 32]
+    k: ENTER
+  - p: [32, 33]
+    k: BACKSPACE
+  - p: [30, 44]
+    k: LA(LSHIFT)
+  - p: [1, 13]
+    k: PRINTSCREEN
+  - p: [2, 14]
+    k: LA(LG(N5))
+  - p: [3, 15]
+    k: LA(LG(N6))
+EOF
+    
+    # Check if the YAML file has a combos section
+    if grep -q "^combos:" "$OUT_DIR/keymap.yaml"; then
+        echo "Replacing existing combos section in YAML file"
+        sed -i.bak '/^combos:/,/^[a-z]*:/s/^combos:.*$//' "$OUT_DIR/keymap.yaml"
+        sed -i.bak '/^combos:/,/^[a-z]*:/s/^  - p:.*$//' "$OUT_DIR/keymap.yaml"
+        sed -i.bak '/^combos:/,/^[a-z]*:/s/^    k:.*$//' "$OUT_DIR/keymap.yaml"
+    fi
+    
+    # Append the combos to the keymap.yaml file
+    cat "$TMP_COMBOS" >> "$OUT_DIR/keymap.yaml"
+    echo "Adding combos to YAML file"
+    
+    # Clean up temp file
+    rm "$TMP_COMBOS"
+    
+    # Check for potentially problematic cross-half combos
+    echo -e "\nChecking for cross-half combos..."
+    # Left half positions: 0-5, 12-17, 24-29, 36-42, 50-54
+    # Right half positions: 6-11, 18-23, 30-35, 43-49, 55-59
+    grep -n "p: \[[0-9]" "$OUT_DIR/keymap.yaml" | grep -E "p: \[([0-4]|1[2-7]|2[4-9]|3[6-9]|4[0-2]|5[0-4]),.*([6-9]|1[0-1]|1[8-9]|2[0-3]|3[0-5]|4[3-9]|5[5-9])\]|p: \[([6-9]|1[0-1]|1[8-9]|2[0-3]|3[0-5]|4[3-9]|5[5-9]),.*([0-5]|1[2-7]|2[4-9]|3[6-9]|4[0-2]|5[0-4])\]" || echo "No cross-half combos detected!"
+else
+    echo "WARNING: Combos file not found at $COMBO_FILE"
+fi
+
 # Merge configuration settings into keymap.yaml directly
 echo -e "\nMerging configuration settings into keymap.yaml..."
 if [ -f "$CONFIG_FILE" ] && [ -f "$OUT_DIR/keymap.yaml" ]; then

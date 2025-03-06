@@ -216,9 +216,12 @@ def process_keymap(keymap_path, output_path):
         
         for pos in positions:
             if pos in key_positions:
-                numeric_positions.append(key_positions[pos])
+                numeric_pos = key_positions[pos]
+                numeric_positions.append(numeric_pos)
+                print(f"Mapping {pos} -> {numeric_pos}")
             else:
                 numeric_positions.append(pos)
+                print(f"Warning: No mapping found for {pos}, keeping as is")
         
         return f'key-positions = <{" ".join(numeric_positions)}>;'
     
@@ -481,8 +484,6 @@ def main():
                 with open(yaml_path, 'w') as f:
                     yaml.dump(yaml_content, f, default_flow_style=False)
                 print("Updated YAML layout to 'sofle'")
-    else:
-                print("Error: YAML file doesn't have the expected structure")
         except Exception as e:
             print(f"Error updating YAML layout: {e}")
             print("Continuing with default layout")
