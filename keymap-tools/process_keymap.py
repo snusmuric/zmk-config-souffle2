@@ -348,35 +348,10 @@ def process_combos(combo_file_path, key_positions, layer_definitions=None):
         if '&kp ' in binding:
             key_char = binding.replace('&kp ', '')
             
-        # Extract layers if they exist
-        layers = ["BASE"]  # Default to BASE layer
-        layers_match = re.search(r'layers\s*=\s*<([^>]+)>', combo_body)
-        if layers_match and layer_definitions:
-            layers_str = layers_match.group(1)
-            layers = []
-            for layer in layers_str.split():
-                # Check if this is a numeric layer index
-                if layer.isdigit():
-                    layer_num = layer
-                    # Try to find the layer name for this index
-                    for name, idx in layer_definitions.items():
-                        if idx == layer:
-                            layers.append(name)
-                            break
-                    else:
-                        # If no matching name found, use the numeric value
-                        layers.append(f"Layer{layer_num}")
-                # Or check if it's a symbolic layer name
-                elif layer in layer_definitions:
-                    layers.append(layer)
-                else:
-                    layers.append(layer)
-        
-        # Add the combo to our list
+        # Add the combo to our list with just positions and key
         yaml_combos.append({
             'p': positions,
-            'k': key_char,
-            'l': layers
+            'k': key_char
         })
     
     print(f"Processed {combo_count} combos, extracted {len(yaml_combos)} valid combos")
@@ -385,20 +360,9 @@ def process_combos(combo_file_path, key_positions, layer_definitions=None):
     if yaml_combos:
         print("Sample of extracted combos:")
         for i, combo in enumerate(yaml_combos[:3]):
-            print(f"  Combo {i+1}: positions={combo['p']}, key={combo['k']}, layers={combo['l']}")
+            print(f"  Combo {i+1}: positions={combo['p']}, key={combo['k']}")
     else:
-        print("No combos were extracted. Examining the pattern match...")
-        # Debug the regex pattern
-        simple_combo_pattern = r'combo_\w+\s*{'
-        simple_matches = re.findall(simple_combo_pattern, combos_content)
-        print(f"Found {len(simple_matches)} basic combo definitions")
-        if simple_matches:
-            print(f"First few matches: {simple_matches[:5]}")
-            
-            # If no matches, print a sample of the combos file for inspection
-            print("Sample of combos file for inspection:")
-            lines = combos_content.split('\n')
-            print('\n'.join(lines[:min(20, len(lines))]))
+        print("No combos were extracted")
     
     return yaml_combos
 
@@ -483,6 +447,15 @@ def main():
                 yaml_content['layout'] = {"zmk_keyboard": "sofle"}
                 with open(yaml_path, 'w') as f:
                     yaml.dump(yaml_content, f, default_flow_style=False)
+                    print(f"YAML written to: {yaml_path}")
+                    
+                # Verify file content after writing
+                try:
+                    with open(yaml_path, 'r') as f:
+                        written_content = yaml.safe_load(f)
+                        print("Written YAML content keys:", written_content.keys())
+                except Exception as e:
+                    print(f"Error verifying written YAML: {e}")
                 print("Updated YAML layout to 'sofle'")
         except Exception as e:
             print(f"Error updating YAML layout: {e}")
@@ -496,28 +469,32 @@ def main():
         # Add combos to the YAML file
         if yaml_combos:
             try:
+                print(f"Processing {len(yaml_combos)} combos")
+                print("Sample combos:", yaml_combos[:3])  # Show first 3 combos for verification
+                
                 with open(yaml_path, 'r') as f:
-                    yaml_content = yaml.safe_load(f)
+                    yaml_content = yaml.safe_load(f) or {}
+                    print("Existing YAML content keys:", yaml_content.keys())
                 
-                # Add the combos list to the yaml content
-                yaml_content['combos'] = yaml_combos
+                # Ensure combos section exists and preserve any existing combos
+                if 'combos' not in yaml_content:
+                    print("Creating new combos section")
+                    yaml_content['combos'] = []
                 
-                # Write the updated yaml content back to the file
+                # Add new combos
+                print(f"Adding {len(yaml_combos)} combos to YAML")
+                yaml_content['combos'].extend(yaml_combos)
+                
+                # Write updated content
                 with open(yaml_path, 'w') as f:
                     yaml.dump(yaml_content, f, default_flow_style=False)
-                
-                print("Added combos information to YAML file")
+                    print(f"YAML written to: {yaml_path}")
+                    
+                print("Combos successfully added to YAML file")
+                print("Final YAML content keys:", yaml_content.keys())
             except Exception as e:
                 print(f"Error adding combos to YAML: {e}")
-                # If we encounter an error, try to append the combos in plain text
-                try:
-                    with open(yaml_path, 'a') as f:
-                        f.write("\ncombos:\n")
-                        for combo in yaml_combos:
-                            f.write(f"  - {{p: {combo['p']}, k: \"{combo['k']}\", l: {combo['l']}}}\n")
-                    print("Added combos information to YAML file (text mode)")
-                except Exception as e2:
-                    print(f"Error adding combos to YAML (text mode): {e2}")
+                print("YAML content at time of error:", yaml_content)
         
         # Generate SVG visualization
         print("\nGenerating SVG visualization...")
@@ -545,6 +522,15 @@ def main():
                     # Write the merged content back to the yaml file
                     with open(yaml_path, 'w') as f:
                         yaml.dump(yaml_content, f, default_flow_style=False)
+                        print(f"YAML written to: {yaml_path}")
+                        
+                    # Verify file content after writing
+                    try:
+                        with open(yaml_path, 'r') as f:
+                            written_content = yaml.safe_load(f)
+                            print("Written YAML content keys:", written_content.keys())
+                    except Exception as e:
+                        print(f"Error verifying written YAML: {e}")
                 
                 print("Configuration settings merged successfully")
             except Exception as e:

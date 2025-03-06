@@ -103,27 +103,6 @@ else
     exit 1
 fi
 
-# Check if the YAML file has combos section already
-if ! grep -q "^combos:" "$OUT_DIR/keymap.yaml"; then
-    echo "No combos found in the parsed output. Extracting combos from processed keymap..."
-
-    # Extract combo information from processed keymap.keymap
-    COMBOS_FILE="$OUT_DIR/combos.yml"
-    # Extract all combo definitions, format as YAML
-    grep -A 6 "combo_" "$OUT_DIR/processed_keymap.keymap" | grep -E 'combo_|bindings|key-positions|timeout-ms|require-prior-idle-ms' | sed 's/;//' | sed 's/{//' | sed 's/}//' | sed 's/^\s*/  /' | sed 's/combo_\(.*\):/- name: \1/' | sed 's/bindings = /  binding: /' | sed 's/key-positions = /  positions: /' | sed 's/timeout-ms = /  timeout: /' | sed 's/require-prior-idle-ms = /  prior-idle: /' > "$COMBOS_FILE"
-
-    # Add combos section to YAML file
-    TMP_YAML=$(mktemp)
-    cat "$OUT_DIR/keymap.yaml" > "$TMP_YAML"
-    echo "combos:" >> "$TMP_YAML"
-    cat "$COMBOS_FILE" >> "$TMP_YAML"
-    mv "$TMP_YAML" "$OUT_DIR/keymap.yaml"
-    rm "$COMBOS_FILE"
-    echo "Added combos information to YAML file"
-else
-    echo "Combos section already exists in YAML file"
-fi
-
 # Manually copy a working example keymap.yaml if available
 if [ ! -s "$OUT_DIR/keymap.yaml" ]; then
     echo "WARNING: YAML file is empty. Attempting to use a working example."
@@ -139,75 +118,6 @@ fi
 # Step 3: Generate SVG visualization
 echo -e "\nGenerating SVG visualization..."
 
-# Add combos directly to the YAML file
-echo -e "\nAdding combos to the YAML file..."
-COMBO_FILE="$CONFIG_DIR/includes/combos.dtsi"
-
-if [ -f "$COMBO_FILE" ]; then
-    echo "Found combos file: $COMBO_FILE"
-
-    # Create a temporary file for combos
-    TMP_COMBOS=$(mktemp)
-
-    # Create a YAML combos section with the format keymap-drawer expects
-    cat > "$TMP_COMBOS" << 'EOF'
-combos:
-  - p: [37, 25]
-    k: LG(Z)
-  - p: [28, 27]
-    k: MY_REDO
-  - p: [38, 26]
-    k: LG(X)
-  - p: [39, 27]
-    k: LG(C)
-  - p: [40, 28]
-    k: LG(V)
-  - p: [41, 53]
-    k: NUM
-  - p: [40, 52]
-    k: NAV_LEFTHAND_SELECTION
-  - p: [27, 28]
-    k: ENTER
-  - p: [26, 27]
-    k: BACKSPACE
-  - p: [31, 32]
-    k: ENTER
-  - p: [32, 33]
-    k: BACKSPACE
-  - p: [30, 44]
-    k: LA(LSHIFT)
-  - p: [1, 13]
-    k: PRINTSCREEN
-  - p: [2, 14]
-    k: LA(LG(N5))
-  - p: [3, 15]
-    k: LA(LG(N6))
-EOF
-
-    # Check if the YAML file has a combos section
-    if grep -q "^combos:" "$OUT_DIR/keymap.yaml"; then
-        echo "Replacing existing combos section in YAML file"
-        sed -i.bak '/^combos:/,/^[a-z]*:/s/^combos:.*$//' "$OUT_DIR/keymap.yaml"
-        sed -i.bak '/^combos:/,/^[a-z]*:/s/^  - p:.*$//' "$OUT_DIR/keymap.yaml"
-        sed -i.bak '/^combos:/,/^[a-z]*:/s/^    k:.*$//' "$OUT_DIR/keymap.yaml"
-    fi
-
-    # Append the combos to the keymap.yaml file
-    cat "$TMP_COMBOS" >> "$OUT_DIR/keymap.yaml"
-    echo "Adding combos to YAML file"
-
-    # Clean up temp file
-    rm "$TMP_COMBOS"
-
-    # Check for potentially problematic cross-half combos
-    echo -e "\nChecking for cross-half combos..."
-    # Left half positions: 0-5, 12-17, 24-29, 36-42, 50-54
-    # Right half positions: 6-11, 18-23, 30-35, 43-49, 55-59
-    grep -n "p: \[[0-9]" "$OUT_DIR/keymap.yaml" | grep -E "p: \[([0-4]|1[2-7]|2[4-9]|3[6-9]|4[0-2]|5[0-4]),.*([6-9]|1[0-1]|1[8-9]|2[0-3]|3[0-5]|4[3-9]|5[5-9])\]|p: \[([6-9]|1[0-1]|1[8-9]|2[0-3]|3[0-5]|4[3-9]|5[5-9]),.*([0-5]|1[2-7]|2[4-9]|3[6-9]|4[0-2]|5[0-4])\]" || echo "No cross-half combos detected!"
-else
-    echo "WARNING: Combos file not found at $COMBO_FILE"
-fi
-
 # Merge configuration settings into keymap.yaml directly
 echo -e "\nMerging configuration settings into keymap.yaml..."
 if [ -f "$CONFIG_FILE" ] && [ -f "$OUT_DIR/keymap.yaml" ]; then
@@ -220,6 +130,7 @@ if [ -f "$CONFIG_FILE" ] && [ -f "$OUT_DIR/keymap.yaml" ]; then
 
     # Move the temp file back to the original location
     mv "$TMP_FILE" "$OUT_DIR/keymap.yaml"
+
     echo "Configuration settings merged successfully"
 else
     echo "WARNING: Either configuration file or keymap.yaml not found. Proceeding without custom configuration."
