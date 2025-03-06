@@ -537,7 +537,7 @@ def main():
                 print(f"Error merging configuration settings: {e}")
         
         print("Using local keymap-drawer repository for drawing")
-        subprocess.run(["python", "-m", "keymap_drawer", "draw", yaml_path, svg_output], check=True)
+        subprocess.run(["python", "-m", "keymap_drawer", "draw", "-o", svg_output, yaml_path], check=True)
         
         print("\nSuccess! SVG visualization created.")
         
