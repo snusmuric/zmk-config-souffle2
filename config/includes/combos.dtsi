@@ -8,6 +8,13 @@
 / {
 	combos {
 		compatible = "zmk,combos";
+
+		combo_esc2 {
+			bindings = <&kp ESC>;
+			key-positions = <LT5 LM5>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
 		
 		combo_undo {
 			bindings = <&kp LG(Z)>;
