@@ -137,5 +137,17 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
 		};
+
+		combo_intellij_cmd_q {
+			bindings = <&kp LG(Q)>;
+			key-positions = <LT4 LM4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+		combo_intellij_cmd_alt_b {
+			bindings = <&kp LG(LALT(B))>;
+			key-positions = <LT3 LM3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
 	};
 };
