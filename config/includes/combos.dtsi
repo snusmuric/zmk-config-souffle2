@@ -23,13 +23,6 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
 		
-		combo_redo {
-			bindings = <&kp MY_REDO>;
-			key-positions = <LT1 LM1>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-		};
-		
 		combo_cut {
 			bindings = <&kp LG(X)>;
 			key-positions = <38 26>;
