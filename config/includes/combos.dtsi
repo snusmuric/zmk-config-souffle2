@@ -153,7 +153,7 @@
 		};
 
 		combo_intellij_search_usage {
-			bindings = <&kp LA(F7))>;
+			bindings = <&kp LA(F7)>;
 			key-positions = <LT0 LM0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
