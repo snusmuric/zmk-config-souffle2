@@ -146,5 +146,17 @@
 			key-positions = <LT3 LM3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
+
+		combo_intellij_go_back {
+			bindings = <&kp LG(LA(ARROW_LEFT))>;
+			key-positions = <LT2 LM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+		combo_intellij_go_to_last_edit {
+			bindings = <&kp LG(LS(BACKSPACE))>;
+			key-positions = <LT1 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
 	};
 };
