@@ -119,7 +119,6 @@
 			key-positions = <LN4 LT4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
 		};
 		
 		combo_monosnap_capture_area {
@@ -127,7 +126,6 @@
 			key-positions = <LN3 LT3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
 		};
 		
 		combo_monosnap_capture_screen {
@@ -135,7 +133,6 @@
 			key-positions = <LN2 LT2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
 		};
 
 		combo_intellij_cmd_q {
