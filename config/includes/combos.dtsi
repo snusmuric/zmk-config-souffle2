@@ -148,7 +148,7 @@
 		};
 
 		combo_intellij_go_back {
-			bindings = <&kp LG(LA(ARROW_LEFT))>;
+			bindings = <&kp LG(LA(LEFT))>;
 			key-positions = <LT2 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
