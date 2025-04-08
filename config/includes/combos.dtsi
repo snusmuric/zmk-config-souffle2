@@ -22,6 +22,13 @@
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
+
+		combo_redo {
+			bindings = <&kp MY_REDO>;
+			key-positions = <LT1 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
 		
 		combo_cut {
 			bindings = <&kp LG(X)>;
@@ -112,6 +119,7 @@
 			key-positions = <LN4 LT4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
 		};
 		
 		combo_monosnap_capture_area {
@@ -119,6 +127,7 @@
 			key-positions = <LN3 LT3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
 		};
 		
 		combo_monosnap_capture_screen {
@@ -126,36 +135,37 @@
 			key-positions = <LN2 LT2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
 		};
 
-		combo_intellij_cmd_q {
-			bindings = <&kp LG(Q)>;
-			key-positions = <LT4 LM4>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
+		// combo_intellij_cmd_q {
+		// 	bindings = <&kp LG(Q)>;
+		// 	key-positions = <LT4 LM4>;
+		// 	timeout-ms = <COMBO_TERM_FAST>;
+		// };
 
-		combo_intellij_cmd_alt_b {
-			bindings = <&kp LG(LA(B))>;
-			key-positions = <LT3 LM3>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
+		// combo_intellij_cmd_alt_b {
+		// 	bindings = <&kp LG(LA(B))>;
+		// 	key-positions = <LT3 LM3>;
+		// 	timeout-ms = <COMBO_TERM_FAST>;
+		// };
 
-		combo_intellij_go_back {
-			bindings = <&kp LG(LA(LEFT))>;
-			key-positions = <LT2 LM2>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
+		// combo_intellij_go_back {
+		// 	bindings = <&kp LG(LA(LEFT))>;
+		// 	key-positions = <LT2 LM2>;
+		// 	timeout-ms = <COMBO_TERM_FAST>;
+		// };
 
-		combo_intellij_go_to_last_edit {
-			bindings = <&kp LG(LS(BACKSPACE))>;
-			key-positions = <LT1 LM1>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
+		// combo_intellij_go_to_last_edit {
+		// 	bindings = <&kp LG(LS(BACKSPACE))>;
+		// 	key-positions = <LT1 LM1>;
+		// 	timeout-ms = <COMBO_TERM_FAST>;
+		// };
 
-		combo_intellij_search_usage {
-			bindings = <&kp LA(F7)>;
-			key-positions = <LT0 LM0>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
+		// combo_intellij_search_usage {
+		// 	bindings = <&kp LA(F7)>;
+		// 	key-positions = <LT0 LM0>;
+		// 	timeout-ms = <COMBO_TERM_FAST>;
+		// };
 	};
 };
