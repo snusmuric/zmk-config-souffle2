@@ -150,6 +150,7 @@
 			bindings = <&kp LG(LA(B))>;
 			key-positions = <LM0 LB0>;
 			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <MOUSE>;
 		};
 
 		// combo_intellij_go_back {
