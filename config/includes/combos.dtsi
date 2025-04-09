@@ -153,6 +153,13 @@
 			layers = <MOUSE>;
 		};
 
+		combo_intellij_methods_list {
+			bindings = <&kp LG(F12)>;
+			key-positions = <LT3 LM3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <MOUSE>;
+		};
+
 		// combo_intellij_go_back {
 		// 	bindings = <&kp LG(LA(LEFT))>;
 		// 	key-positions = <LT2 LM2>;
