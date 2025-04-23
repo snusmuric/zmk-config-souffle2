@@ -191,23 +191,9 @@
 			layers = <ADJUST>;
 		};
 
-		combo_reset_right__semicolon_slash {
-			bindings = <&sys_reset>;
-			key-positions = <RM4 RB4>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			layers = <ADJUST>;
-		};
-
 		combo_bootloader_left__g_b {
 			bindings = <&bootloader>;
 			key-positions = <LM0 LB0>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			layers = <ADJUST>;
-		};
-
-		combo_bootloader_right__h_n {
-			bindings = <&bootloader>;
-			key-positions = <RM0 RB0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			layers = <ADJUST>;
 		};
