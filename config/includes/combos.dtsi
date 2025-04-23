@@ -184,19 +184,5 @@
 			layers = <ADJUST>;
 		};
 
-		combo_reset_left__a_z {
-			bindings = <&sys_reset>;
-			key-positions = <LM4 LB4>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			layers = <ADJUST>;
-		};
-
-		combo_bootloader_left__g_b {
-			bindings = <&bootloader>;
-			key-positions = <LM0 LB0>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			layers = <ADJUST>;
-		};
-
 	};
 };
