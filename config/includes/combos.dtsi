@@ -11,14 +11,14 @@
 
 		combo_esc2 {
 			bindings = <&kp ESC>;
-			key-positions = <LT5 LM5>;
+			key-positions = <LT4 LM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
 		
 		combo_undo {
 			bindings = <&kp LG(Z)>;
-			key-positions = <37 25>;
+			key-positions = <LM4 LB4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
@@ -118,33 +118,27 @@
 		
 		combo_print_screen {
 			bindings = <&kp PRINTSCREEN>;
-			key-positions = <LN4 LT4>;
+			key-positions = <LT3 LM3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
 		};
 		
 		combo_monosnap_capture_area {
 			bindings = <&kp LA(LG(N5))>;
-			key-positions = <LN3 LT3>;
+			key-positions = <LT2 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
 		};
 		
 		combo_monosnap_capture_screen {
 			bindings = <&kp LA(LG(N6))>;
-			key-positions = <LN2 LT2>;
+			key-positions = <LT1 LM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND MOUSE>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
 		};
-
-		// combo_intellij_cmd_q {
-		// 	bindings = <&kp LG(Q)>;
-		// 	key-positions = <LT4 LM4>;
-		// 	timeout-ms = <COMBO_TERM_FAST>;
-		// };
 
 		combo_intellij_cmd_alt_b {
 			bindings = <&kp LG(LA(B))>;
@@ -160,24 +154,6 @@
 			layers = <MOUSE>;
 		};
 
-		// combo_intellij_go_back {
-		// 	bindings = <&kp LG(LA(LEFT))>;
-		// 	key-positions = <LT2 LM2>;
-		// 	timeout-ms = <COMBO_TERM_FAST>;
-		// };
-
-		// combo_intellij_go_to_last_edit {
-		// 	bindings = <&kp LG(LS(BACKSPACE))>;
-		// 	key-positions = <LT1 LM1>;
-		// 	timeout-ms = <COMBO_TERM_FAST>;
-		// };
-
-		// combo_intellij_search_usage {
-		// 	bindings = <&kp LA(F7)>;
-		// 	key-positions = <LT0 LM0>;
-		// 	timeout-ms = <COMBO_TERM_FAST>;
-		// };
-
 		combo_intellij_format_code {
 			bindings = <&kp LG(LA(L))>;
 			key-positions = <LT1 LM1>;
@@ -187,9 +163,10 @@
 
 		combo_intellij_optimize_import {
 			bindings = <&kp LG(LA(O))>;
-			key-positions = <LN1 LT1>;
+			key-positions = <RT4 RM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			layers = <MOUSE>;
 		};
+
 	};
 };
