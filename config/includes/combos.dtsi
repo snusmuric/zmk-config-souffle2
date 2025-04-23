@@ -168,5 +168,27 @@
 			layers = <MOUSE>;
 		};
 
+		// ---- adjustment layer combos ----
+		combo_out_toggle__t_g {
+			bindings = <&out OUT_TOG>;
+			key-positions = <LT1 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
+		combo_bt_clear_all__d_c {
+			bindings = <&out BT_CLR_ALL>;
+			key-positions = <LM2 LB2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
+		combo_bt_clear_all__d_c {
+			bindings = <&out BT_CLR_ALL>;
+			key-positions = <LM2 LB2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
 	};
 };

@@ -135,7 +135,7 @@
 			display-name = "Sym";
 			bindings = <
 			&kp N1              &kp N2                   &kp N3                &kp N4                  &kp N5                  &kp N6                                            &kp N7     &kp N8                   &kp N9                       &kp N0                        &kp F11               &kp F12
-			&trans              &kp SQT                  &kp LESS_THAN         &ht GRAVE GREATER_THAN  &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &euro_mac
+			&trans              &kp SQT                  &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &euro_mac
 			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH                                          &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &pound_mac
 			&trans              &kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED                 &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &yen_mac
 			&trans   &to BASE  &kp DOT  &trans  &kp COMMA                                                                                                                &trans  &kp DEL  &trans  &trans  &trans
@@ -291,10 +291,10 @@
 			display-name = "Adj";
 			bindings = <
 			&to BASE           &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                                    &trans  &trans                &trans                 &trans                  &trans  &trans
-			&out OUT_TOG       &bt BT_DISC 0    &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                                   &none   &kp C_REWIND          &kp C_PLAY_PAUSE       &kp C_FAST_FORWARD      &none   &none
-			&trans             &bt BT_CLR_ALL   &none          &none          &none          &none                                           &none   &kp C_VOL_DN          &kp C_MUTE             &kp C_VOL_UP            &none   &trans
-			&trans             &none            &none          &bt BT_CLR     &none          &trans    &to BASE                       &none  &none   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_AUTO  &kp C_BRIGHTNESS_INC    &none   &trans
-			&trans  &to BASE &trans  &trans  &trans                                                                             &trans  &trans  &trans  &trans  &trans
+			&out OUT_TOG       &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                                    &none   &kp C_REWIND          &kp C_PLAY_PAUSE       &kp C_FAST_FORWARD      &none   &none
+			&trans             &bt BT_DISC 0    &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                                   &none   &kp C_VOL_DN          &kp C_MUTE             &kp C_VOL_UP            &none   &trans
+			&trans             &none            &none          &bt BT_CLR     &none          &trans         &to BASE                  &none  &none   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_AUTO  &kp C_BRIGHTNESS_INC    &none   &trans
+			&trans  &to BASE &trans  &trans  &trans                                                                                   &trans  &trans  &trans  &trans  &trans
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
