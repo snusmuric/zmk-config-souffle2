@@ -1,5 +1,5 @@
 # Builds firmware in Dev Container environment
-cd /workspaces/zmk/app
+cd /workspaces/zmk/app || exit
 west build -d build/sofle_left -b nice_nano_v2 -- -DZMK_CONFIG="/workspaces/zmk-config/config" -DZMK_EXTRA_MODULES="/workspaces/zmk-config/zmk-userspace" -DSHIELD="sofle_left"  
 west build -d build/sofle_right -b nice_nano_v2 -- -DZMK_CONFIG="/workspaces/zmk-config/config" -DZMK_EXTRA_MODULES="/workspaces/zmk-config/zmk-userspace" -DSHIELD="sofle_right"
 mkdir -p /workspaces/zmk-config/out/
