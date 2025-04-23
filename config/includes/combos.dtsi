@@ -184,9 +184,30 @@
 			layers = <ADJUST>;
 		};
 
-		combo_bt_clear_all__d_c {
-			bindings = <&out BT_CLR_ALL>;
-			key-positions = <LM2 LB2>;
+		combo_reset_left__a_z {
+			bindings = <&sys_reset>;
+			key-positions = <LM4 LB4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
+		combo_reset_right__semicolon_slash {
+			bindings = <&sys_reset>;
+			key-positions = <RM4 RB4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
+		combo_bootloader_left__g_b {
+			bindings = <&bootloader>;
+			key-positions = <LM0 LB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
+		combo_bootloader_right__h_n {
+			bindings = <&bootloader>;
+			key-positions = <RM0 RB0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			layers = <ADJUST>;
 		};
