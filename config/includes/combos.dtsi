@@ -94,38 +94,80 @@
 			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED>;
 		};
 		
-		
-		combo_lang_switch_win {
-			bindings = <&kp LA(LSHIFT)>;
-			key-positions = <RM0 RB0>;
+		// ---- screenshot combos Mac OS ----
+		combo_screenshot_to_file_mac {
+			bindings = <&kp LS(LG(N3))>;
+			key-positions = <LT4 LM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
 		};
-		
-		combo_print_screen {
-			bindings = <&kp PRINTSCREEN>;
+
+		combo_screenshot_to_clipboard_mac {
+			bindings = <&kp LC(LS(LG(N3)))>;
 			key-positions = <LT3 LM3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
 		};
-		
-		combo_monosnap_capture_area {
-			bindings = <&kp LA(LG(N5))>;
+
+		combo_screenshot_selected_area_to_file_mac {
+			bindings = <&kp LS(LG(N4))>;
 			key-positions = <LT2 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
 		};
 		
-		combo_monosnap_capture_screen {
-			bindings = <&kp LA(LG(N6))>;
+		combo_screenshot_selected_area_to_clipboard_mac {
+			bindings = <&kp LC(LS(LG(N4)))>;
 			key-positions = <LT1 LM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
 		};
 
+		combo_screenshot_tool_mac {
+			bindings = <&kp LS(LG(N5))>;
+			key-positions = <LT0 LM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+		};
+		
+		// ---- screenshot combos Windows ----
+		combo_screenshot_screen_to_file_win {
+			bindings = <&kp LG(PRINTSCREEN)>;
+			key-positions = <RT0 RM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+		};
+
+		combo_screenshot_screen_to_clipboard_win {
+			bindings = <&kp PRINTSCREEN>;
+			key-positions = <RT1 RM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+		};
+
+		combo_screenshot_tool_win {
+			bindings = <&kp LG(LS(S))>;
+			key-positions = <RT2 RM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+		};
+
+		combo_lang_switch_win {
+			bindings = <&kp LA(LSHIFT)>;
+			key-positions = <RM0 RB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+		// ---- intellij combos ----
 		combo_intellij_cmd_alt_b {
 			bindings = <&kp LG(LA(B))>;
 			key-positions = <LM0 LB0>;
