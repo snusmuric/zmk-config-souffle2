@@ -15,6 +15,7 @@
 			key-positions = <LT4 LM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED FUNCT FUNCT_LOCKED>;
 		};
 		
 		combo_undo {
