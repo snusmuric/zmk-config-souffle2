@@ -10,8 +10,8 @@
 	combos {
 		compatible = "zmk,combos";
 
-		combo_esc2 {
-			bindings = <&kp ESC>;
+		combo_base_layer {
+			bindings = <&to BASE>;
 			key-positions = <LT4 LM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
