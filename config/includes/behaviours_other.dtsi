@@ -423,11 +423,10 @@
             bindings = <&sk LS(LC(LG(LALT)))>, <&caps_word>;
         };
 
-        td_meh_capsword_r: td_meh_capsword_r {
+        td_hyper_capsword_r: td_hyper_capsword_r {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            //bindings = <&sk LS(LC(LALT))>, <&caps_word>;
             bindings = <&sk LS(LC(LG(LALT)))>, <&caps_word>;
         };
 

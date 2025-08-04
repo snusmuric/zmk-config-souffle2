@@ -79,6 +79,7 @@
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
 		
+		// Enter combos
 		combo_enter_left {
 			bindings = <&kp ENTER>;
 			key-positions = <LM2 LM1>;
@@ -93,6 +94,39 @@
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
 			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED>;
+		};
+
+		// Hyper & Meh combos
+		combo_hyper_left {
+			bindings = <&sk LS(LC(LG(LALT)))>;
+			key-positions = <LT2 LM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
+		};
+
+		combo_meh_left {
+			bindings = <&sk &sk LS(LC(LALT))>;
+			key-positions = <LT3 LM3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
+		};
+		
+		combo_hyper_right {
+			bindings = <&sk LS(LC(LG(LALT)))>;
+			key-positions = <RT1 RM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
+		};
+
+		combo_meh_right {
+			bindings = <&sk &sk LS(LC(LALT))>;
+			key-positions = <RT2 RM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
 		};
 		
 		// ---- screenshot combos Mac OS ----
