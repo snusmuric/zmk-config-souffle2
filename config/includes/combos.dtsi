@@ -81,7 +81,7 @@
 		
 		combo_enter_left {
 			bindings = <&kp ENTER>;
-			key-positions = <LM3 LM2 LM1>;
+			key-positions = <LM2 LM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
 			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
@@ -89,7 +89,7 @@
 		
 		combo_enter_right {
 			bindings = <&kp ENTER>;
-			key-positions = <RM1 RM2 RM3>;
+			key-positions = <RM1 RM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
 			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED>;
