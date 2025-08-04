@@ -427,7 +427,8 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&sk LS(LC(LALT))>, <&caps_word>;
+            //bindings = <&sk LS(LC(LALT))>, <&caps_word>;
+            bindings = <&sk LS(LC(LG(LALT)))>, <&caps_word>;
         };
 
         /*
