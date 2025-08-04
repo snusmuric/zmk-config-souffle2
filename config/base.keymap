@@ -139,7 +139,7 @@
 			&trans              &kp SQT                  &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &euro_mac
 			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH                                          &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &pound_mac
 			&trans              &kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to SYM_LOCKED                 &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &yen_mac
-			&trans   &to BASE  &kp DOT  &trans  &kp COMMA                                                                                                                &trans  &kp DEL  &trans  &trans  &trans
+			&trans   &to BASE  &trans  &trans  &trans                                                                                                                    &trans  &kp DEL  &trans  &trans  &trans
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
