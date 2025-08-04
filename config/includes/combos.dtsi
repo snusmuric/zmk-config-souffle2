@@ -24,15 +24,6 @@
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
-
-		combo_redo {
-			bindings = <&kp MY_REDO>;
-			key-positions = <LT1 LM1>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED FUNCT FUNCT_LOCKED>;
-
-		};
 		
 		combo_cut {
 			bindings = <&kp LG(X)>;
