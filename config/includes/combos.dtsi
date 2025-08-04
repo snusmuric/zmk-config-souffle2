@@ -106,7 +106,7 @@
 		};
 
 		combo_meh_left {
-			bindings = <&sk &sk LS(LC(LALT))>;
+			bindings = <&sk LS(LC(LALT))>;
 			key-positions = <LT2 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
@@ -122,7 +122,7 @@
 		};
 
 		combo_meh_right {
-			bindings = <&sk &sk LS(LC(LALT))>;
+			bindings = <&sk LS(LC(LALT))>;
 			key-positions = <RT2 RM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
