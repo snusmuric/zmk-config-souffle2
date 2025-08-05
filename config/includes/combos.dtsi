@@ -101,7 +101,7 @@
 			key-positions = <LT2 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-			layers = layers = <BASE>;
+			layers = <BASE>;
 		};
 		
 		combo_hyper_right {
