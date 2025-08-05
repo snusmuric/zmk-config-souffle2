@@ -101,7 +101,7 @@
 			key-positions = <LT2 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
+			layers = layers = <BASE>;
 		};
 		
 		combo_hyper_right {
