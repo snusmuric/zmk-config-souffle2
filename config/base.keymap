@@ -74,7 +74,7 @@
 			&sk LGUI              &kp Q                    &kp W            &kp E            &kp R                  &kp T                                                                                       &kp Y           &kp U                 &kp I          &kp O          &kp P             &ht RGUI RBKT
 			&sk LCTRL             &hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &ht RCTRL LBKT
 			&sk LEFT_ALT          &kp Z                    &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RALT SQT
-			&td_hyper_capsword_l  &sk LS(LC(LALT))         &ht MOUSE ESC    &ht LSHFT SPACE  &lt NAV TAB                                                                        &sl SYM  &lt NUM BSPC  &lt FUNCT DEL  &sk LS(LC(LALT))  &td_hyper_capsword_r
+			&td_hyper_capsword_l  &sk LS(LC(LALT))         &lt_esc_mouse    MOUSE ESC        &ht LSHFT SPACE        &lt NAV TAB                                                 &sl SYM  &lt NUM BSPC  &lt FUNCT DEL  &sk LS(LC(LALT))  &td_hyper_capsword_r
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
