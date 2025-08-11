@@ -116,11 +116,11 @@
 		mouse {
 			display-name = "Mouse";
 			bindings = <
-			&kp N1                &kp N2                  &kp N3                 &kp N4                 &kp N5                &kp N6                                         &kp N7          &kp N8                   &kp N9               &kp N0             &kp F11            &kp F12
-			&kp LGUI              &kp LC(Q)               &kp LG(W)              &kp LG(LS(BACKSPACE))  &kp LS(F6)            &kp LG(LA(T))                                  &msc SCRL_UP    &msc SCRL_LEFT           &mmv MOVE_UP         &msc SCRL_RIGHT    &kp PG_UP          &trans
-			&trans                &trans                  &trans                 &trans                 &trans               &kp LC(G)                                       &msc SCRL_DOWN  &mmv MOVE_LEFT           &mmv MOVE_DOWN       &mmv MOVE_RIGHT    &hm_r RCTRL PG_DN  &kp SCROLLLOCK
-			&kp LALT              &kp LG(LS(SLASH))       &kp LG(SLASH)          &kp LA(LS(INSERT))     &mo MOUSE_SLOW        &mo MOUSE_FAST     &to BASE            &trans  &kp INSERT      &mkp MB4                 &none                &mkp MB5           &kp DEL            &kp PAUSE_BREAK
-			&td_hyper_capsword_l  &to BASE &trans  &trans  &trans                                                                                                    &mkp LCLK       &mkp RCLK                &mkp MCLK            &trans             &td_hyper_capsword_r
+			&kp N1                &kp N2                  &kp N3                 &kp N4                 &kp N5                &kp N6                                         &kp N7           &kp N8                   &kp N9               &kp N0             &kp F11        &kp F12
+			&kp LGUI              &kp LC(Q)               &kp LG(W)              &kp LG(LS(BACKSPACE))  &kp LS(F6)            &kp LG(LA(T))                                  &msc SCRL_LEFT   &msc SCRL_DOWN           &mmv SCRL_UP         &msc SCRL_RIGHT    &none          &none
+			&trans                &trans                  &trans                 &trans                 &trans                &kp LC(G)                                      &msc MOVE_LEFT   &mmv MOVE_DOWN           &mmv MOVE_UP         &mmv MOVE_RIGHT    &none          &none
+			&kp LALT              &kp LG(LS(SLASH))       &kp LG(SLASH)          &kp LA(LS(INSERT))     &mo MOUSE_SLOW        &mo MOUSE_FAST     &to BASE            &trans  &mkp MB4         &mkp MB5                 &none                &none              &none          &none
+			&td_hyper_capsword_l  &to BASE &trans  &trans  &trans                                                                                                    &mkp LCLK   &mkp RCLK   &mkp MCLK   &trans   &td_hyper_capsword_r
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
