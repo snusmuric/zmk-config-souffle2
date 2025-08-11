@@ -118,7 +118,7 @@
 			bindings = <
 			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                       &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
 			&kp LGUI              &kp HOME                &kp PG_DN         &kp PG_UP             &none                 &none                                        &kp HOME    &kp PG_DN                &kp PG_UP            &kp END            &kp INSERT         &trans
-			&trans                &hl LCTRL LEFT          &hm_l LALT DOWN   &hm_l LGUI UP         &hm_l LSHFT RIGHT     &none                                        &kp LEFT    &kp DOWN                 &kp UP               &kp RIGHT          &kp PAUSE_BREAK    &trans
+			&trans                &hm_l LCTRL LEFT        &hm_l LALT DOWN   &hm_l LGUI UP         &hm_l LSHFT RIGHT     &none                                        &kp LEFT    &kp DOWN                 &kp UP               &kp RIGHT          &kp PAUSE_BREAK    &trans
 			&kp LALT              &none                   &none             &none                 &none                 &none    &to BASE                    &trans  &none       &none                    &none                &none              &kp SCROLLLOCK     &trans
 			&trans  &to BASE &trans  &trans  &trans                                                                                                          &trans  &trans   &trans  &trans  &trans
 			>;
