@@ -15,7 +15,7 @@
 			key-positions = <LT4 LM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED FUNCT FUNCT_LOCKED>;
+			layers = <BASE NUM SYM FUNCT>;
 		};
 		
 		combo_undo {
@@ -51,32 +51,14 @@
 			key-positions = <LB0 LH1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
-		
-		combo_toggle_nav_layer_left {
-			bindings = <&tog NAV_LEFTHAND_SELECTION>;
-			key-positions = <LB1 LH2>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
-		
-		combo_tog_num_layer_right {
-			bindings = <&tog NUM>;
-			key-positions = <RB0 RH1>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
-		
-		combo_tog_nav_layer_right {
-			bindings = <&tog NAV>;
-			key-positions = <RB1 RH2>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
-		
+	
 		// Enter combos
 		combo_enter_left {
 			bindings = <&kp ENTER>;
 			key-positions = <LM2 LM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED MOUSE>;
+			layers = <BASE NUM SYM NAV FUNCT MOUSE>;
 		};
 		
 		combo_enter_right {
@@ -84,7 +66,7 @@
 			key-positions = <RM1 RM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
-			layers = <BASE NUM_WORD NUM NUM_LOCKED SYM_WORD SYM SYM_LOCKED NAV_WORD NAV NAV_LOCKED NAV_LEFTHAND NAV_LEFTHAND_SELECTION FUNCT FUNCT_LOCKED>;
+			layers = <BASE NUM SYM NAV FUNCT>;
 		};
 
 		// Hyper & Meh combos
@@ -126,7 +108,7 @@
 			key-positions = <LT4 LM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 
 		combo_screenshot_to_clipboard_mac {
@@ -134,7 +116,7 @@
 			key-positions = <LT3 LM3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 
 		combo_screenshot_selected_area_to_file_mac {
@@ -142,7 +124,7 @@
 			key-positions = <LT2 LM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 		
 		combo_screenshot_selected_area_to_clipboard_mac {
@@ -150,7 +132,7 @@
 			key-positions = <LT1 LM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 
 		combo_screenshot_tool_mac {
@@ -158,7 +140,7 @@
 			key-positions = <LT0 LM0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 		
 		// ---- screenshot combos Windows ----
@@ -167,7 +149,7 @@
 			key-positions = <RT0 RM0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 
 		combo_screenshot_screen_to_clipboard_win {
@@ -175,7 +157,7 @@
 			key-positions = <RT1 RM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 
 		combo_screenshot_tool_win {
@@ -183,7 +165,7 @@
 			key-positions = <RT2 RM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <NUM_WORD NAV NAV_LOCKED NAV_LEFTHAND>;
+			layers = <NAV>;
 		};
 
 		combo_lang_switch_win {
