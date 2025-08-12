@@ -176,7 +176,7 @@
 		};
 
 		combo_lang_switch_mac {
-			bindings = <&kp LG(BLANK)>;
+			bindings = <&kp LG(SPACE)>;
 			key-positions = <LM0 LB0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
