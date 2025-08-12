@@ -77,10 +77,10 @@
 		num_layer {
 			display-name = "Num";
 			bindings = <
-			&kp N1              &kp N2              &kp N3         &kp N4                &kp N5                &kp  N6                                                  &kp N7     	&kp N8                   &kp N9               &kp N0             &kp F11            &kp F12
-			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp HOME    &kp MY_LEFT_L            &kp UP               &kp MY_RIGHT_L     &kp PG_UP          &trans
-			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp END     &hm_shift_r RSHFT LEFT   &hm_r RGUI DOWN      &hm_r RALT RIGHT   &hm_r RCTRL PG_DN  &kp SCROLLLOCK
-			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &kp INSERT  &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp DEL            &kp PAUSE_BREAK
+			&kp N1              &kp N2              &kp N3         &kp N4                &kp N5                &kp  N6                                                  &kp N7     	&kp N8                   &kp N9               &kp N0             &kp F11                   &kp F12
+			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp HOME    &kp PG_DN                &kp PG_UP            &kp END            &kp INSERT                &trans
+			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp LEFT    &hm_shift_r RSHFT DOWN   &hm_r RGUI UP        &hm_r RALT RIGHT   &hm_r RCTRL PAUSE_BREAK   &kp SCROLLLOCK
+			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer M&to BASE               &trans  &none       &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp SCROLLLOCK            &kp PAUSE_BREAK
 			&trans  &to BASE &trans  &trans  &trans                                                                                                             &trans  &trans   &trans  &trans  &trans
 			>;
 			
