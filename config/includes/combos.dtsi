@@ -175,6 +175,13 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
 
+		combo_lang_switch_mac {
+			bindings = <&kp LG(BLANK)>;
+			key-positions = <LM0 LB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
 		// ---- intellij combos ----
 		combo_intellij_cmd_alt_b {
 			bindings = <&kp LG(LA(B))>;
