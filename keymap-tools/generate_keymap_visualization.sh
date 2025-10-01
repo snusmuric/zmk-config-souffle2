@@ -30,10 +30,10 @@ echo "- SVG output: $SVG_OUTPUT"
 if [ -d "$KEYMAP_DRAWER_DIR" ]; then
     echo -e "\nChecking keymap-drawer installation..."
     # Check if the package is installed in development mode
-    if ! pip list | grep -q "keymap-drawer.*\(editable\|dev\)"; then
+    if ! pip3 list | grep -q "keymap-drawer.*\(editable\|dev\)"; then
         echo "Installing keymap-drawer in development mode..."
         cd "$KEYMAP_DRAWER_DIR"
-        pip install -e .
+        pip3 install -e .
         cd "$TOOLS_DIR"
         echo "keymap-drawer installed successfully in development mode"
     else
@@ -48,7 +48,7 @@ else
         git clone https://github.com/caksoylar/keymap-drawer.git "$KEYMAP_DRAWER_DIR"
         echo "Installing keymap-drawer in development mode..."
         cd "$KEYMAP_DRAWER_DIR"
-        pip install -e .
+        pip3 install -e .
         cd "$TOOLS_DIR"
         echo "keymap-drawer cloned and installed successfully"
     else
@@ -65,6 +65,7 @@ rm -f "$OUT_DIR"/*
 
 # Step 1: Process the keymap
 echo -e "\nProcessing keymap..."
+source "$KEYMAP_DIR/venv/bin/activate"
 python3 "$TOOLS_DIR/process_keymap.py" "$CONFIG_DIR/base.keymap" "$OUT_DIR/processed_keymap.keymap"
 
 # Step 1.5: Combo processing is now handled directly in the process_keymap.py script
@@ -77,7 +78,8 @@ if [ "$FORCE_LOCAL_REPO" = true ] || ! command -v keymap &> /dev/null; then
     if [ -d "$KEYMAP_DRAWER_DIR" ]; then
         echo "Using local keymap-drawer repository for drawing"
         cd "$KEYMAP_DRAWER_DIR"
-        python -m keymap_drawer draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
+        source "$KEYMAP_DIR/venv/bin/activate"
+        python3 -m keymap_drawer draw "$OUT_DIR/keymap.yaml" -o "$SVG_OUTPUT"
         cd "$TOOLS_DIR"
     else
         echo "ERROR: keymap-drawer repository not found at $KEYMAP_DRAWER_DIR"
