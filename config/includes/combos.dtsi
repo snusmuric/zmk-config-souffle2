@@ -215,7 +215,7 @@
 		// ---- adjustment layer combos ----
 		combo_out_toggle__t_g {
 			bindings = <&out OUT_TOG>;
-			key-positions = <LT1 LM1>;
+			key-positions = <LT0 LM0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			layers = <ADJUST>;
 		};
