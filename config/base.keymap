@@ -67,8 +67,8 @@
 			bindings = <
 			&kp F1                &kp F2                   &kp F3           &kp F4           &kp F5                 &kp F6                                                                                      &kp F7          &kp F8                &kp F9         &kp F10        &kp F11           &kp F12
 			&sk LGUI              &kp Q                    &kp W            &kp E            &kp R                  &kp T                                                                                       &kp Y           &kp U                 &kp I          &kp O          &kp P             &ht RGUI RBKT
-			&sk LCTRL             &hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &ht RCTRL LBKT
-			&sk LEFT_ALT          &kp Z                    &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RALT SQT
+			&sk LEFT_ALT          &hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &ht RALT LBKT
+			&sk LCTRL             &kp Z                    &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RCTRL SQT
 			&td_hyper_capsword_l  &sk LS(LC(LALT))         &lt_esc_mouse    MOUSE ESC        &ht LSHFT SPACE        &lt NAV TAB                                                 &sl SYM  &lt NUM BSPC  &lt FUNCT DEL  &sk LS(LC(LALT))  &td_hyper_capsword_r
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
@@ -80,7 +80,7 @@
 			&kp N1              &kp N2              &kp N3         &kp N4                &kp N5                &kp  N6                                                  &kp N7     	&kp N8                   &kp N9               &kp N0             &kp F11                   &kp F12
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp HOME    &kp PG_DN                &kp PG_UP            &kp END            &kp INSERT                &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp LEFT    &hm_shift_r RSHFT DOWN   &hm_r RGUI UP        &hm_r RALT RIGHT   &hm_r RCTRL PAUSE_BREAK   &kp SCROLLLOCK
-			&ht LEFT_ALT EQUAL  &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &none       &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp SCROLLLOCK            &kp PAUSE_BREAK
+			&ht LCTRL EQUAL     &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &none       &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp SCROLLLOCK            &kp PAUSE_BREAK
 			&trans  &to BASE &trans  &trans  &trans                                                                                                             &trans  &trans   &trans  &trans  &trans
 			>;
 			
@@ -117,9 +117,9 @@
 			display-name = "Mouse";
 			bindings = <
 			&kp N1                &kp N2                  &kp N3                 &kp N4                 &kp N5                &kp N6                                         &kp N7           &kp N8                   &kp N9               &kp N0             &kp F11        &kp F12
-			&kp LGUI              &kp LC(Q)               &kp LG(W)              &kp LG(LS(BACKSPACE))  &kp LS(F6)            &kp LG(LA(T))                                  &msc SCRL_LEFT   &msc SCRL_DOWN           &msc SCRL_UP         &msc SCRL_RIGHT    &none          &none
-			&trans                &trans                  &trans                 &trans                 &trans                &kp LC(G)                                      &mmv MOVE_LEFT   &mmv MOVE_DOWN           &mmv MOVE_UP         &mmv MOVE_RIGHT    &none          &none
-			&kp LALT              &kp LG(LS(SLASH))       &kp LG(SLASH)          &kp LA(LS(INSERT))     &mo MOUSE_SLOW        &mo MOUSE_FAST     &to BASE            &trans  &mkp MB4         &mkp MB5                 &none                &none              &none          &none
+			&trans                &kp LC(Q)               &kp LG(W)              &kp LG(LS(BACKSPACE))  &kp LS(F6)            &kp LG(LA(T))                                  &msc SCRL_LEFT   &msc SCRL_DOWN           &msc SCRL_UP         &msc SCRL_RIGHT    &none          &trans
+			&trans                &trans                  &trans                 &trans                 &trans                &kp LC(G)                                      &mmv MOVE_LEFT   &mmv MOVE_DOWN           &mmv MOVE_UP         &mmv MOVE_RIGHT    &none          &trans
+			&trans                &kp LG(LS(SLASH))       &kp LG(SLASH)          &kp LA(LS(INSERT))     &mo MOUSE_SLOW        &mo MOUSE_FAST     &to BASE            &trans  &mkp MB4         &mkp MB5                 &none                &none              &none          &trans
 			&td_hyper_capsword_l  &to BASE &trans  &trans  &trans                                                                                                    &mkp LCLK   &mkp RCLK   &mkp MCLK   &trans   &td_hyper_capsword_r
 			>;
 			
@@ -156,9 +156,9 @@
 			display-name = "Fun";
 			bindings = <
 			&to BASE          &kp F16           &kp F17       &kp F18  &kp F19       &kp F20                                          &kp C_REWIND      &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD           &kp C_MUTE                    &kp C_VOL_DN      &kp C_VOL_UP
-			&kp LGUI          &kp F15           &kp F7        &kp F8   &kp F9        &kp F12                                          &none             &none             &none                        &none                         &none             &kp RGUI
-			&trans            &kp F14           &kp F4        &kp F5   &kp F6        &kp F11                                          &none             &kp RSHFT         &kp RGUI                     &kp RALT                      &kp RCTRL         &kp RCTRL
-			&kp LALT          &kp F13           &kp F1        &kp F2   &kp F3        &kp F10  &to BASE                        &trans  &none             &none             &none                        &none                         &none             &kp RALT
+			&trans            &kp F15           &kp F7        &kp F8   &kp F9        &kp F12                                          &none             &none             &none                        &none                         &none             &trans
+			&trans            &kp F14           &kp F4        &kp F5   &kp F6        &kp F11                                          &none             &kp RSHFT         &kp RGUI                     &kp RALT                      &kp RCTRL         &trans
+			&trans            &kp F13           &kp F1        &kp F2   &kp F3        &kp F10  &to BASE                        &trans  &none             &none             &none                        &none                         &none             &trans
 			&trans  &to BASE &trans  &trans  &trans                                                                           &trans  &trans  &trans  &trans  &trans
 			>;
 			
