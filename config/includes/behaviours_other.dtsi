@@ -259,7 +259,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&sk LSHFT, <&caps_word>;
+            bindings = <&sk LSHFT>, <&caps_word>;
         };
 
         td_sticky_shift_capsword_r: td_sticky_shift_capsword_r {
