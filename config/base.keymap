@@ -66,9 +66,9 @@
 			display-name = "Base";
 			bindings = <
 			&kp F1                       &kp F2                   &kp F3           &kp F4           &kp F5                 &kp F6                                                                                      &kp F7          &kp F8                &kp F9         &kp F10        &kp F11           &kp F12
-			&sk LGUI                     &kp Q                    &kp W            &kp E            &kp R                  &kp T                                                                                       &kp Y           &kp U                 &kp I          &kp O          &kp P             &ht RGUI RBKT
-			&sk LEFT_ALT                 &hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &ht RALT LBKT
-			&sk LCTRL                    &kp Z                    &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &ht RCTRL SQT
+			&sk LGUI                     &kp Q                    &kp W            &kp E            &kp R                  &kp T                                                                                       &kp Y           &kp U                 &kp I          &kp O          &kp P             &sk RGUI
+			&sk LEFT_ALT                 &hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &sk RALT
+			&sk LCTRL                    &kp Z                    &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &sk RCTRL
 			&td_sticky_shift_capsword_l  &sk LS(LC(LALT))         &lt_esc_mouse    MOUSE ESC        &ht LSHFT SPACE        &lt NAV TAB                                                 &sl SYM  &lt NUM BSPC  &lt FUNCT DEL  &sk LS(LC(LALT))  &td_sticky_shift_capsword_r
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
