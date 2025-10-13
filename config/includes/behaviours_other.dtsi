@@ -255,6 +255,20 @@
             bindings = <&sk LS(LC(LG(LALT)))>, <&caps_word>;
         };
 
+        td_sticky_shift_capsword_l: td_sticky_shift_capsword_l {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk LSHFT, <&caps_word>;
+        };
+
+        td_sticky_shift_capsword_r: td_sticky_shift_capsword_r {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk RSHFT>, <&caps_word>;
+        };
+
         /*
         * Momentary Layer / To Layer
         *
