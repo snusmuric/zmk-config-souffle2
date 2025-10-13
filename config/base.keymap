@@ -67,7 +67,7 @@
 			bindings = <
 			&kp F1                       &kp F2                   &kp F3           &kp F4           &kp F5                 &kp F6                                                                                      &kp F7          &kp F8                &kp F9         &kp F10        &kp F11           &kp F12
 			&sk LGUI                     &kp Q                    &kp W            &kp E            &kp R                  &kp T                                                                                       &kp Y           &kp U                 &kp I          &kp O          &kp P             &sk RGUI
-			&sk LEFT_ALT                 &hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &sk RALT
+			&td_hyper_capsword_l         &hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F    &kp G                                                                                       &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI  &td_hyper_capsword_r
 			&sk LCTRL                    &kp Z                    &kp X            &kp C            &kp V                  &kp B   &tog MOUSE                                          &ht MY_MEH LG(SPACE)            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH          &sk RCTRL
 			&td_sticky_shift_capsword_l  &sk LS(LC(LALT))         &lt_esc_mouse    MOUSE ESC        &ht LSHFT SPACE        &lt NAV TAB                                                 &sl SYM  &lt NUM BSPC  &lt FUNCT DEL  &sk LS(LC(LALT))  &td_sticky_shift_capsword_r
 			>;
@@ -80,7 +80,7 @@
 			&kp N1              &kp N2              &kp N3         &kp N4                &kp N5                &kp  N6                                                  &kp N7     	&kp N8                   &kp N9               &kp N0             &kp F11                   &kp F12
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp HOME    &kp PG_DN                &kp PG_UP            &kp END            &kp INSERT                &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp LEFT    &hm_shift_r RSHFT DOWN   &hm_r RGUI UP        &hm_r RALT RIGHT   &hm_r RCTRL PAUSE_BREAK   &kp SCROLLLOCK
-			&ht LCTRL EQUAL     &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &none       &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp SCROLLLOCK            &kp PAUSE_BREAK
+			&kp EQUAL           &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &none       &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp SCROLLLOCK            &kp PAUSE_BREAK
 			&trans  &to BASE &trans  &trans  &trans                                                                                                             &trans  &trans   &trans  &trans  &trans
 			>;
 			
@@ -104,9 +104,9 @@
 			display-name = "Nav";
 			bindings = <
 			&kp F1                &kp F2                  &kp F3            &kp F4                &kp F5                &kp F6                                       &kp F7      &kp F8                   &kp F9               &kp F10            &kp F1             &kp F12
-			&kp LGUI              &kp HOME                &kp PG_DN         &kp PG_UP             &none                 &none                                        &kp HOME    &kp PG_DN                &kp PG_UP            &kp END            &kp INSERT         &none 
+			&trans                &kp HOME                &kp PG_DN         &kp PG_UP             &none                 &none                                        &kp HOME    &kp PG_DN                &kp PG_UP            &kp END            &kp INSERT         &none 
 			&trans                &hm_l LCTRL LEFT        &hm_l LALT DOWN   &hm_l LGUI UP         &hm_l LSHFT RIGHT     &none                                        &kp LEFT    &kp DOWN                 &kp UP               &kp RIGHT          &none              &none 
-			&kp LALT              &none                   &none             &none                 &none                 &none    &to BASE                    &trans  &none       &none                    &none                &none              &none              &none 
+			&trans                &none                   &none             &none                 &none                 &none    &to BASE                    &trans  &none       &none                    &none                &none              &none              &none 
 			&trans  &to BASE &trans  &trans  &trans                                                                                                          &trans  &trans   &trans  &trans  &trans
 			>;
 			
