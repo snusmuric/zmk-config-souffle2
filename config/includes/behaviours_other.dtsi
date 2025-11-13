@@ -47,8 +47,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <TD_TAPPING_TERM>;
-            quick-tap-ms = <TD_TAPPING_TERM>;
+            tapping-term-ms = <300>;  // Increased from 200ms for accessibility
+            quick-tap-ms = <300>;     // Allows easier repeated taps
             flavor = "tap-preferred";
         };
 
