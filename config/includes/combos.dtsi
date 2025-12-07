@@ -30,6 +30,7 @@
 			key-positions = <RT4 RM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM SYM FUNCT MOUSE>;
 		};
 		
 		combo_cut {
@@ -44,6 +45,7 @@
 			key-positions = <RT3 RM3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM SYM FUNCT MOUSE>;
 		};
 		
 		combo_copy {
@@ -58,6 +60,7 @@
 			key-positions = <RT1 RM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM SYM FUNCT MOUSE>;
 		};
 
 		combo_paste {
@@ -72,6 +75,7 @@
 			key-positions = <RT2 RM2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM SYM FUNCT MOUSE>;
 		};
 		
 		combo_toggle_num_layer_left {
@@ -88,13 +92,13 @@
 
 		combo_blank_right {
 			bindings = <&kp SPACE>;
-			key-positions = <RT0 RT1>;
+			key-positions = <RM2 RM3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
 
 		combo_esc_right {
 			bindings = <&kp ESC>;
-			key-positions = <RT0 RM0>;
+			key-positions = <RM0 RM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
 
