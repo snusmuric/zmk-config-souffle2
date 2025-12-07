@@ -27,7 +27,7 @@
 
 		combo_undo_right {
 			bindings = <&kp LG(Z)>;
-			key-positions = <RT4 RM4>;
+			key-positions = <RM4 RB4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <BASE NUM SYM FUNCT MOUSE>;
@@ -42,7 +42,7 @@
 
 		combo_cut_right {
 			bindings = <&kp LG(X)>;
-			key-positions = <RT3 RM3>;
+			key-positions = <RM3 RB3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <BASE NUM SYM FUNCT MOUSE>;
@@ -57,7 +57,7 @@
 
 		combo_copy_right {
 			bindings = <&kp LG(C)>;
-			key-positions = <RT1 RM1>;
+			key-positions = <RM2 RB2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <BASE NUM SYM FUNCT MOUSE>;
@@ -72,7 +72,7 @@
 
 		combo_paste_right {
 			bindings = <&kp LG(V)>;
-			key-positions = <RT2 RM2>;
+			key-positions = <RM1 RB1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <BASE NUM SYM FUNCT MOUSE>;
