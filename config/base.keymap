@@ -170,7 +170,7 @@
 			bindings = <
 			&to BASE          &kp F16           &kp F17       &kp F18  &kp F19       &kp F20                                          &kp C_REWIND      &kp C_PLAY_PAUSE        &kp C_FAST_FORWARD           &kp C_MUTE                    &kp C_VOL_DN        &trans
 			&trans            &kp F15           &kp F7        &kp F8   &kp F9        &kp F12                                          &kp F12           &kp F7                  &kp F8                       &kp F9                        &kp F16             &trans
-			&trans            &kp F14           &kp F4        &kp F5   &kp F6        &kp F11                                          &kp F11           &hm_shift_r RSHFT F2    &hm_r RGUI F3                &hm_r RALT F4                 &hm_r RCTRL F15     &trans
+			&trans            &kp F14           &kp F4        &kp F5   &kp F6        &kp F11                                          &kp F11           &hm_shift_r RSHFT F4    &hm_r RGUI F5                &hm_r RALT F6                 &hm_r RCTRL F15     &trans
 			&trans            &kp F13           &kp F1        &kp F2   &kp F3        &kp F10  &to BASE                        &trans  &kp F10           &kp F1                  &kp F2                       &kp F3                        &kp F14             &trans
 			&trans  &to BASE &trans  &trans  &trans                                                                           &trans  &trans  &trans  &trans  &trans
 			>;
