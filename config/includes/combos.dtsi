@@ -96,6 +96,12 @@
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
 
+		combo_tab_right {
+			bindings = <&kp TAB>;
+			key-positions = <RB1 RB2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
 		combo_esc_right {
 			bindings = <&kp ESC>;
 			key-positions = <RM0 RM1>;
