@@ -92,13 +92,13 @@
 
 		combo_blank_right {
 			bindings = <&kp SPACE>;
-			key-positions = <RM2 RM3>;
+			key-positions = <RM0 RM1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
 
 		combo_tab_right {
 			bindings = <&kp TAB>;
-			key-positions = <RM0 RM1>;
+			key-positions = <RB0 RB1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
 
