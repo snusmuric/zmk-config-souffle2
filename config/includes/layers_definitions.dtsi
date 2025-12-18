@@ -1,7 +1,7 @@
 // Define layer numbers
 #define BASE 0
-#define NUM 1
-#define NUM_RIGHT 2
+#define NUM_RIGHT 1
+#define NUM 2
 #define SYM 3
 #define NAV 4
 #define MOUSE 5

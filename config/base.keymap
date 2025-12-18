@@ -74,6 +74,19 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 		
+		num_layer_right {
+			display-name = "Num R";
+			bindings = <
+			&kp N1              &kp N2              &kp N3         &kp N4                &kp N5                &kp  N6                                                  &kp N7     	&kp N8                   &kp N9               &kp N0             &kp F11                   &kp F12
+			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp PLUS    &kp N7                   &kp N8               &kp N9             &kp KP_ASTERISK           &trans
+			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp MINUS   &hm_shift_r RSHFT N4     &hm_r RGUI N5        &hm_r RALT N6      &hm_r RCTRL SLASH         &kp SCROLLLOCK
+			&kp EQUAL           &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &kp DOT     &kp N1                   &kp N2               &kp N3             &kp N0                    &kp PAUSE_BREAK
+			&trans &to BASE  &trans  &trans  &trans                                                                                                             &trans  &lt NUM BSPC  &to BASE  &trans  &trans
+			>;
+			
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
+		};
+
 		num_layer {
 			display-name = "Num";
 			bindings = <
@@ -82,19 +95,6 @@
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp LEFT    &hm_shift_r RSHFT DOWN   &hm_r RGUI UP        &hm_r RALT RIGHT   &hm_r RCTRL PAUSE_BREAK   &kp SCROLLLOCK
 			&kp EQUAL           &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &none       &kp MY_LEFT_W            &none                &kp MY_RIGHT_W     &kp SCROLLLOCK            &kp PAUSE_BREAK
 			&trans &to BASE  &trans  &trans  &trans                                                                                                             &trans  &trans  &trans  &trans  &trans
-			>;
-			
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
-		};
-
-		num_layer_right {
-			display-name = "Num R";
-			bindings = <
-			&kp N1              &kp N2              &kp N3         &kp N4                &kp N5                &kp  N6                                                  &kp N7     	&kp N8                   &kp N9               &kp N0             &kp F11                   &kp F12
-			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp PLUS    &kp N7                   &kp N8               &kp N9             &kp KP_ASTERISK           &trans
-			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp MINUS   &hm_shift_r RSHFT N4     &hm_r RGUI N5        &hm_r RALT N6      &hm_r RCTRL SLASH         &kp SCROLLLOCK
-			&kp EQUAL           &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &kp DOT     &kp N1                   &kp N2               &kp N3             &kp N0                    &kp PAUSE_BREAK
-			&trans &to BASE  &trans  &trans  &trans                                                                                                             &trans  &trans  &to BASE  &trans  &trans
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
