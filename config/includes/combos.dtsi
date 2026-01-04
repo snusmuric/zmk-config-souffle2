@@ -157,6 +157,32 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
 			layers = <BASE>;
 		};
+
+		// Sticky F-keys combos for the Aerospace
+		combo_sticky_f16_right {
+			bindings = <&sk F16>;
+			key-positions = <RT0 RT1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		combo_sticky_f17_right {
+			bindings = <&sk F17>;
+			key-positions = <RT1 RT2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		combo_sticky_f18_right {
+			bindings = <&sk F18>;
+			key-positions = <RT2 RT3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
 		
 		// ---- screenshot combos Mac OS ----
 		combo_screenshot_to_file_mac {
