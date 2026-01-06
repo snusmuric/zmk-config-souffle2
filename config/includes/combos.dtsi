@@ -158,8 +158,8 @@
 			layers = <BASE>;
 		};
 
-		// Sticky F-keys combos for the Aerospace
-		combo_sticky_f16_right {
+		// F-keys combos for the Aerospace
+		combo_f16_right {
 			bindings = <&sk F16>;
 			key-positions = <RT0 RT1>;
 			timeout-ms = <COMBO_TERM_FAST>;
@@ -167,7 +167,7 @@
 			layers = <BASE>;
 		};
 
-		combo_sticky_f17_right {
+		combo_f17_right {
 			bindings = <&sk F17>;
 			key-positions = <RT1 RT2>;
 			timeout-ms = <COMBO_TERM_FAST>;
@@ -175,7 +175,7 @@
 			layers = <BASE>;
 		};
 
-		combo_sticky_f18_right {
+		combo_f18_right {
 			bindings = <&sk F18>;
 			key-positions = <RT2 RT3>;
 			timeout-ms = <COMBO_TERM_FAST>;
