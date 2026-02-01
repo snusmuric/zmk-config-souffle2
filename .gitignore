@@ -4,3 +4,4 @@
 /keymap-tools/out/
 /.venv/
 /keymap-drawer/
+.DS_Store
