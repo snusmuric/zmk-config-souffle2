@@ -118,7 +118,7 @@
 			bindings = <
 			&kp F1                &kp F2                     &kp F3            &kp F4                &kp F5                &kp F6                                         &kp F7           &kp F8            &kp F9               &kp F10            &kp F1             &kp F12
 			&trans                &none                      &none             &none                 &none                 &none                                          &kp HOME         &kp PG_DN         &kp PG_UP            &kp END            &kp INSERT         &none
-			&sk F13               &hm_l LCTRL LEFT           &hm_l LALT DOWN   &hm_l LGUI UP         &hm_l LSHFT RIGHT     &to BASE                                       &kp LEFT         &kp DOWN          &kp UP               &kp RIGHT          &none              &none
+			&sk F13               &hm_l LCTRL A              &hm_l LALT S      &hm_l LGUI D          &hm_l LSHFT F         &to BASE                                       &kp LEFT         &kp DOWN          &kp UP               &kp RIGHT          &none              &none
 			&trans                &sk MY_HYPER_MINUS_SHIFT   &none             &sk MY_LEADER         &sk MY_MEH            &sk MY_HYPER  &to BASE               &trans    &kp ESC          &kp ENTER         &none                &none              &sk MY_HYPER       &none
       &trans  &to BASE  &trans  &trans  &trans                                                                                                            &trans &trans  &kp DEL  &trans  &trans
 			>;
