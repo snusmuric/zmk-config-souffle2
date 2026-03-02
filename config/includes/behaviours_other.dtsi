@@ -48,7 +48,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <TD_TAPPING_TERM>;
-            quick-tap-ms = <TD_TAPPING_TERM>;
+            quick-tap-ms = <TD_QUICK_TAPPING_TERM>;
             flavor = "tap-preferred";
         };
 
