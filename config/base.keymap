@@ -94,7 +94,7 @@
 			&trans              &kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                                                 &kp HOME      &kp PG_DN                &kp PG_UP            &kp END            &kp INSERT                &trans
 			&trans              &hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                                                &kp LEFT      &hm_shift_r RSHFT DOWN   &hm_r RGUI UP        &hm_r RALT RIGHT   &hm_r RCTRL PAUSE_BREAK   &kp SCROLLLOCK
 			&kp EQUAL           &kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT    &ht_tog_layer MY_HYPER NUM            &trans  &none         &none                    &none                &none              &sk MY_HYPER              &kp PAUSE_BREAK
-			&trans &to BASE  &trans  &trans  &trans                                                                                                             &trans  &trans  &trans  &trans  &trans
+			&trans &to BASE  &trans  &caps_word  &trans                                                                                                         &trans  &trans  &trans  &trans  &trans
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
@@ -107,7 +107,7 @@
 			&trans              &kp SQT                  &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                                           &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT           &euro_mac
 			&trans              &kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH                                          &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION          &pound_mac
 			&trans              &kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE  &to BASE                       &trans  &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN           &yen_mac
-      &trans  &to BASE  &trans  &caps_word  &trans                                                                                                                 &trans  &trans  &trans  &trans  &trans
+      &trans  &to BASE  &trans  &trans  &trans                                                                                                                 &trans  &trans  &trans  &trans  &trans
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_INC C_BRI_DEC>;
