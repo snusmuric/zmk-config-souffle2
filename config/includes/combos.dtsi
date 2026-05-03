@@ -177,7 +177,7 @@
 
 		combo_f18_right {
 			bindings = <&sk F18>;
-			key-positions = <RT3 RM2>;
+			key-positions = <RT2 RM0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
 			layers = <BASE>;
