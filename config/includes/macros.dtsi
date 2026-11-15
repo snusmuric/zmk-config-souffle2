@@ -1,5 +1,7 @@
 #include "layers_definitions.dtsi"
 
+#define CAPS_LOCK_MIN_HOLD_MS 250
+
 / {
 	macros {/// this approach doesn't work.k.
 		layer_switch_macro: layer_switch_macro {
@@ -45,6 +47,42 @@
 			, <&macro_tap &kp Y>
 			, <&macro_release &kp LALT>
 			;
+		};
+
+		mac_win_lang_switch: mac_win_lang_switch {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <30>;
+			tap-ms = <30>;
+			bindings
+			= <&macro_tap &kp LA(LG(SPACE))>
+			, <&macro_wait_time 300>
+			, <&macro_tap &kp LA(LSHIFT)>
+			;
+		};
+
+		/*
+		 * Caps Lock with a guaranteed minimum hold time.
+		 *
+		 * macOS ignores Caps Lock toggles when the press and release HID
+		 * reports arrive nearly simultaneously, which happens with fast
+		 * taps (especially when the key is on the other half of a split
+		 * than the held layer key). This macro holds the Caps Lock
+		 * modifier for at least CAPS_LOCK_MIN_HOLD_MS no matter how
+		 * briefly the physical key is tapped.
+		 *
+		 * Implementation note: in a macro, "tap-ms" is the delay between
+		 * the press and release of a &macro_tap binding, while "wait-ms"
+		 * and &macro_wait_time are delays that run *after* an action.
+		 * So tap-ms (not &macro_wait_time) is what guarantees the hold.
+		 */
+
+		caps_lock: caps_lock {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <0>;
+			tap-ms = <CAPS_LOCK_MIN_HOLD_MS>;
+			bindings = <&macro_tap &kp CAPS>;
 		};
 	};
 };

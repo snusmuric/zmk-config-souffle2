@@ -24,7 +24,11 @@
             #binding-cells = <2>;
             bindings = <&kp>,  <&kp>;
 
-            flavor = "tap-preferred";
+            // "balanced" is required for positional HRM to work:
+            // the hold fires when the opposite-hand trigger key is RELEASED.
+            // "tap-preferred" ignores other-key events entirely, so fast
+            // chords (< tapping-term) always resolve as taps.
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;// repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
@@ -38,7 +42,7 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
@@ -49,20 +53,21 @@
 
 
         // Positional Homerow mods for shift
-        // Use faster tapping term and disable some features that may
-        // cause false negatives.
+        // Use faster tapping term. "balanced" + hold-trigger-on-release
+        // let the shift fire as soon as a cross-hand key is released,
+        // and allow combining same-hand mods (e.g. shift + ctrl).
         hm_shift_l: hm_shift_l {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         hm_shift_r: hm_shift_r {
@@ -70,13 +75,13 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         /*
@@ -104,7 +109,7 @@
             #binding-cells = <2>;
             bindings = <&kp>,  <&mm_pgdn_a>;
 
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;// repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;

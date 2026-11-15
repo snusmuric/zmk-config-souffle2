@@ -10,14 +10,30 @@
 	combos {
 		compatible = "zmk,combos";
 
-		combo_base_layer {
-			bindings = <&to BASE>;
+    combo_mouse_layer {
+			bindings = <&mo MOUSE>;
+			key-positions = <LT4 LH2>;
+			timeout-ms = <COMBO_TERM_SLOW>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+    combo_letters_layer {
+			bindings = <&mo LETTERS>;
+			key-positions = <RH2 RH1>;
+			timeout-ms = <COMBO_TERM_SLOW>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+      layers = <BASE>;
+		};
+
+    combo_select_all {
+			bindings = <&kp LG(A)>;
 			key-positions = <LT4 LM4>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <BASE NUM NUM_RIGHT SYM FUNCT>;
+      layers = <BASE NUM NUM_RIGHT SYM FUNCT MOUSE>;
 		};
-		
+
+
 		combo_undo {
 			bindings = <&kp LG(Z)>;
 			key-positions = <LM4 LB4>;
@@ -35,7 +51,7 @@
 		
 		combo_cut {
 			bindings = <&kp LG(X)>;
-			key-positions = <38 26>;
+			key-positions = <LM3 LB3>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
@@ -50,7 +66,7 @@
 		
 		combo_copy {
 			bindings = <&kp LG(C)>;
-			key-positions = <39 27>;
+			key-positions = <LM2 LB2>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
@@ -65,7 +81,7 @@
 
 		combo_paste {
 			bindings = <&kp LG(V)>;
-			key-positions = <40 28>;
+			key-positions = <LM1 LB1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
@@ -251,7 +267,7 @@
 		};
 
 		combo_lang_switch_win {
-			bindings = <&kp LA(LSHIFT)>;
+			bindings = <&kp LC(LS(SPACE))>;
 			key-positions = <RM0 RB0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
@@ -264,6 +280,14 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <BASE>;
 		};
+
+    combo_soft_off {
+			bindings = <&soft_off>;
+			key-positions = <RT4 RM4 RB4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <ADJUST>;
+    };
 
 		// ---- intellij combos ----
 		combo_intellij_cmd_alt_b {

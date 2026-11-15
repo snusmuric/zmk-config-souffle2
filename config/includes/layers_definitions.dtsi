@@ -1,11 +1,12 @@
 // Define layer numbers
 #define BASE 0
-#define NUM_RIGHT 1
-#define NUM 2
-#define SYM 3
-#define NAV 4
-#define MOUSE 5
-#define MOUSE_FAST 6
-#define MOUSE_SLOW 7
-#define FUNCT 8
-#define ADJUST 9
+#define LETTERS 1
+#define NUM_RIGHT 2
+#define NUM 3
+#define SYM 4
+#define NAV 5
+#define MOUSE 6
+#define MOUSE_FAST 7
+#define MOUSE_SLOW 8
+#define FUNCT 9
+#define ADJUST 10
