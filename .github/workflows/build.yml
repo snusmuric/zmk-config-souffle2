@@ -53,17 +53,20 @@ jobs:
       matrix: ${{ fromJson(needs.matrix.outputs.build_matrix) }}
     steps:
       - name: Prepare variables
-        shell: sh -x {0}
+        shell: bash -x {0}
+        env:
+          board: ${{ matrix.board }}
+          shield: ${{ matrix.shield }}
         run: |
-          if [ -n "${{ matrix.shield }}" ]
+          if [ -n "${shield}" ]
           then
-            echo "extra_cmake_args=-DSHIELD=\"${{ matrix.shield }}\"" >> $GITHUB_ENV
-            echo "artifact_name=${{ matrix.shield }}-${{ matrix.board }}-zmk" >> $GITHUB_ENV
-            echo "display_name=${{ matrix.shield }} - ${{ matrix.board }}" >> $GITHUB_ENV
+            echo "extra_cmake_args=-DSHIELD=\"${shield}\"" >> $GITHUB_ENV
+            echo "artifact_name=${shield}-${board//\//_}-zmk" >> $GITHUB_ENV
+            echo "display_name=${shield} - ${board}" >> $GITHUB_ENV
           else
             echo "extra_cmake_args=" >> $GITHUB_ENV
-            echo "artifact_name=${{ matrix.board }}-zmk" >> $GITHUB_ENV
-            echo "display_name=${{ matrix.board }}" >> $GITHUB_ENV
+            echo "artifact_name=${board//\//_}-zmk" >> $GITHUB_ENV
+            echo "display_name=${board}" >> $GITHUB_ENV
           fi
           echo "zephyr_version=${ZEPHYR_VERSION}" >> $GITHUB_ENV
 
@@ -101,7 +104,7 @@ jobs:
 
       - name: West Build (${{ env.display_name }})
         shell: sh -x {0}
-        run: west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
+        run: west build -s zmk/app -b "${{ matrix.board }}" -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
       - name: ${{ env.display_name }} Kconfig file
         run: grep -v -e "^#" -e "^$" build/zephyr/.config | sort

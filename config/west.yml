@@ -9,13 +9,13 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: ead91ca094c6cd778574f73b9ae011ddab611c66
       import: app/west.yml
     - name: zmk-userspace
       remote: elpekenin
-      revision: main
+      revision: f65693dff35d99c82be22e30f5fe41eafb7cb4f3
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: 188d7744915823e3a81fe5eea61cc96ab6708235
   self:
     path: config
